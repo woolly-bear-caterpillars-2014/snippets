@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.snippet-editor {
+	position:relative;
+}
+#snippet-code {
+	width:500px;
+	height:200px;
+	position:relative;
+}

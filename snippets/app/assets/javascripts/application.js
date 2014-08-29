@@ -17,5 +17,29 @@
 //= require ace/ace
 
 $(function () {
-	
+	var editor = ace.edit("snippet-code");
+	editor.getSession().setMode("ace/mode/ruby");
+	var textarea = $('textarea[name="snippet[code]"]').hide();
+	editor.getSession().setValue(textarea.val());
+	editor.getSession().setTabSize(2);
+	editor.getSession().on('change', function(){
+	  textarea.val(editor.getSession().getValue());
+	  console.log(textarea.val())
+	});
+
+	// var editor2 = ace.edit("show");
+	// editor2.setReadOnly(true);
+
+	/*textarea.closest('form').submit(function (event) {
+		event.preventDefault();
+		console.log('code')
+		console.log(textarea.val())
+	  //  textarea.val(editor.getSession().getValue());
+	})*/
+
+
+	$(".editor-mode").change(function() {
+		mode = $(this).val()
+		editor.session.setMode("ace/mode/" + mode);
+	})
 })
