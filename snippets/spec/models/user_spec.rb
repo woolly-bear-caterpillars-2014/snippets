@@ -7,3 +7,4 @@ describe User do
     expect(:user).to respond_to()
   end
 end
+
