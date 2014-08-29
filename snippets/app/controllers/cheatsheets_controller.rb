@@ -1,12 +1,13 @@
 class CheatsheetsController < ApplicationController
 
   def index
-
+    @user = User.find(params[:user_id])
+    @cheatsheets = Cheatsheet.all
   end
 
   def show
     @user = User.find(params[:user_id])
-    @cheatsheets = @user.cheatsheets.all
+    @cheatsheets = @user.cheatsheets.find(params[:id])
   end
 
   def create
@@ -21,18 +22,19 @@ class CheatsheetsController < ApplicationController
 
   def edit
     @cheatsheet = Cheatsheet.find(params[:id])
+    redirect_to user_cheatsheet_path
   end
 
   def update
-    @cheatsheet = Cheatsheet.find(params[:id])
-    @cheatsheet.update(cheatsheet_params)
-    redirect_to user_cheatsheet_path
+    # @cheatsheet = Cheatsheet.find(params[:id])
+    # @cheatsheet.update(cheatsheet_params)
+    # redirect_to user_cheatsheet_path
   end
 
   def destroy
     cheatsheet = Cheatsheet.find(params[:id])
     cheatsheet.destroy
-    redirect_to user_cheatsheet_path
+    redirect_to user_cheatsheets_path
   end
 
   private
