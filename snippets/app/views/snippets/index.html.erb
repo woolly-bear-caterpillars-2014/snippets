@@ -1,0 +1,28 @@
+<h1> Welcome to Snippets </h1>
+<%= link_to 'Login', users_login_path %>
+<%= link_to 'Signup', new_user_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @snippets.each do |snippet| %>
+      <tr>
+        <td><%= snippet.title %></td>
+        <td><%= snippet.code %></td>
+        <td><%= link_to 'Show', snippet%></td>
+        <td><%= link_to 'Edit', edit_snippet_path(snippet) %></td>
+        <td><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h4> Submit a New Snippet: </h4>
+<%=render 'form'%>
