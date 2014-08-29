@@ -5,4 +5,5 @@ require 'rails_helper'
 
 #   it "should have many and respond to cheatsheets" do
 #     expect(:user).to respond_to()
-end
+
+# end
