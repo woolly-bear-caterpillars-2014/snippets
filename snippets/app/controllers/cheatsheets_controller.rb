@@ -4,6 +4,11 @@ class CheatsheetsController < ApplicationController
 
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @cheatsheets = @user.cheatsheets.all
+  end
+
   def create
 
   end
