@@ -19,6 +19,8 @@ describe "user creates cheatsheet" do
     expect(current_url).to eq("http://www.example.com/users/#{User.last.id}/cheatsheets/new")
 
     fill_in  "Name Your Cheatsheet", :with => "Eddie's Sheet of Cheat"
+    click_button 'Create Cheatsheet'
+
     expect(current_url).to eq("http://www.example.com/users/#{User.last.id}")
 
     expect(page).to have_content("Eddie's Sheet of Cheat")

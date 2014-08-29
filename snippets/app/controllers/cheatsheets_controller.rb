@@ -6,17 +6,20 @@ class CheatsheetsController < ApplicationController
   end
 
   def show
+    ## BUG BUG ! show page is for 1 cheatsheet - seems like you are trying for an index action here  # =>  doesn't yet work -but something along these lines
     @user = User.find(params[:user_id])
-    @cheatsheets = @user.cheatsheets.find(params[:id])
+    @cheatsheet = Cheatsheet.find(params[:cheatsheet_id])
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @cheatsheet = Cheatsheet.create(cheatsheet_params)
-    redirect_to user_cheatsheet_path
+    @user.cheatsheets << @cheatsheet
+    redirect_to user_path(@user) # =>  show  all user's cheatsheets with the index partial, from shared
   end
 
   def new
+    @user = User.find(session[:user_id])
     @cheatsheet = Cheatsheet.new
   end
 

@@ -6,9 +6,9 @@
   <%= link_to "Edit Account", edit_user_path %>
   <%= link_to "Delete Account", user_path(@user.id), method: :delete %>
 
-  <%= link_to "Create a New Cheatsheet" %>
+  <%= link_to "Create a New Cheatsheet", new_user_cheatsheet_path(@user) %>
 
-  <%= render 'cheatsheets/show' %>
+  <%= render 'shared/cheatsheets_index' %>
 
 <% else %>
 

@@ -1,0 +1,9 @@
+<%= form_for [@user, @cheatsheet] do |f| -%>
+  <%= f.label :name, "Name Your Cheatsheet" %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Create Cheatsheet" %>
+
+<% end -%>
+
+
