@@ -1,17 +1,29 @@
 require 'rails_helper'
 
-describe "the signin process", :type => :feature do
-  before :each do
-    User.make(:email => 'user@example.com', :password => 'caplin')
+describe "user creates cheatsheet" do
+  # before :each do
+  #   User.make(:email => 'user@example.com', :password => 'caplin')
+  # end
+
+  scenario "valid user makes cheatsheet without snippets" do
+    visit '/users/new'
+
+    fill_in 'Email', :with => 'user@example.com'
+    fill_in 'Password', :with => 'useruser'
+
+    click_button 'Sign Up'
+
+    expect(current_url).to eq("http://www.example.com/users/#{User.last.id}")
+    # expect(page).to have_content ''
+    click_link("Create a New Cheatsheet")
+    expect(current_url).to eq("http://www.example.com/users/#{User.last.id}/cheatsheets/new")
+
+    fill_in  "Name Your Cheatsheet", :with => "Eddie's Sheet of Cheat"
+    expect(current_url).to eq("http://www.example.com/users/#{User.last.id}")
+
+    expect(page).to have_content("Eddie's Sheet of Cheat")
+
   end
 
-  it "signs me in" do
-    visit '/sessions/new'
-    within("#session") do
-      fill_in 'Email', :with => 'user@example.com'
-      fill_in 'Password', :with => 'password'
-    end
-    click_button 'Sign in'
-    expect(page).to have_content 'Success'
-  end
+
 end
