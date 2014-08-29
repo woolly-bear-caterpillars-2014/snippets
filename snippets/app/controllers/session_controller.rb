@@ -6,7 +6,7 @@ class SessionController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/users/#{@user.id}"
+      redirect_to snippets_path
     else
       redirect_to 'new'
     end

@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   # validates :password, with: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$}/, on: :create
 
   has_many :cheatsheets
+  has_many :snippets
 end
