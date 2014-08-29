@@ -2,6 +2,7 @@ class SnippetsController < ApplicationController
 	def index
 		@snippets = Snippet.all
 		@snippet = Snippet.new
+		@user = User.find(session[:user_id])
 	end
 
 	def show
