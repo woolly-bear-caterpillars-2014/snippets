@@ -4,8 +4,14 @@
 		<%=f.text_field :title %>
 
 	
-	<div class="field">
+	<div class="field snippet-editor">
 		<%=f.label :code %> <br>
+		<select class="editor-mode">
+				<option value="ruby">Ruby</option>
+				<option value="javascript">Javascript</option>
+				<option value="css">CSS</option>
+		  </select>
+		<div id="snippet-code"></div>
 		<%=f.text_area :code %>
 	</div>
 	
