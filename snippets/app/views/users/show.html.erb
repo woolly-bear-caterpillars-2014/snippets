@@ -6,6 +6,8 @@
   <%= link_to "Edit Account", edit_user_path %>
   <%= link_to "Delete Account", user_path(@user.id), method: :delete %>
 
+  <%= render 'cheatsheets/show' %>
+
 <% else %>
 
   <%= render 'form' %>
