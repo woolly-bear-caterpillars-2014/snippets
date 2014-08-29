@@ -30,7 +30,9 @@ class CheatsheetsController < ApplicationController
   end
 
   def destroy
-
+    cheatsheet = Cheatsheet.find(params[:id])
+    cheatsheet.destroy
+    redirect_to user_cheatsheet_path
   end
 
   private
