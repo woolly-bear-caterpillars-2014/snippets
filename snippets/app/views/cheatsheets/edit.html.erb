@@ -1,0 +1,35 @@
+<% if session[:user_id] %>
+
+  <%= link_to "Log Out", users_logout_path, method: :delete %>
+  <%= link_to "Delete Cheatsheet", user_cheatsheet_path, method: :delete %>
+
+  <div class="cheatsheet">
+    <h2><%= cheatsheet.name %></h2>
+    <% cheatsheet.snippets.each do |snippet| %>
+      <div class="snippet">
+        <h3><%= snippet.title %></h3>
+        <div class="snipcode">
+          <%= snippet.code %><!-- Code Text Here -->
+          <%= link_to "Delete Snippet", snippet_path, method: :delete %>
+        </div>
+      </div>
+    <% end %>
+
+<% else %>
+
+  <%= link_to "Log In", users_login_path %>
+  <%= link_to "Sign Up", new_user_path %>
+
+  <div class="cheatsheet">
+    <h2><%= cheatsheet.name %></h2>
+    <% cheatsheet.snippets.each do |snippet| %>
+      <div class="snippet">
+        <h3><%= snippet.title %></h3>
+        <div class="snipcode">
+          <%= snippet.code %><!-- Code Text Here -->
+          <%= link_to "Delete Snippet", snippet_path, method: :delete %>
+        </div>
+      </div>
+    <% end %>
+
+<% end %>

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-   root 'snippets#index'
-      resources :snippets
+  root 'snippets#index'
+
+  resources :snippets
 
   get 'users/login' => 'session#new'
   post 'users/login' => 'session#create'
   delete 'users/logout' => 'session#destroy'
+
   resources :users do
     resources :cheatsheets
   end
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

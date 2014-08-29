@@ -43,7 +43,9 @@ class SnippetsController < ApplicationController
 		redirect_to root_path
 	end
 
+	private
 	def snippet_params
+		p params.inspect
 		params.require(:snippet).permit(:title, :code)
 	end
 end
