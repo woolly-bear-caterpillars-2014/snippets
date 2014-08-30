@@ -16,8 +16,13 @@
 .snippet-editor {
 	position:relative;
 }
-#snippet-code {
-	width:500px;
-	height:200px;
+.editor {
+	width:600px;
+	height:150px;
 	position:relative;
+	border: 1px solid #DDD;
+	border-radius: 4px;
+}
+.snippet {
+	margin-bottom:20px;
 }

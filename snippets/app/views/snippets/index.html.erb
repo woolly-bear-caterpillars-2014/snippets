@@ -12,7 +12,7 @@
 
   <tbody>
     <% @snippets.each do |snippet| %>
-      <tr>
+     <tr>
         <td><%= snippet.title %></td>
         <td><%= snippet.code %></td>
         <td><%= link_to 'Show', snippet%></td>
@@ -22,7 +22,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= render @snippets %>
 <br>
 <h4> Submit a New Snippet: </h4>
 <%=render 'form'%>
