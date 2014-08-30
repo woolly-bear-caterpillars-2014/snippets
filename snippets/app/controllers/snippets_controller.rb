@@ -46,6 +46,6 @@ class SnippetsController < ApplicationController
 	private
 	def snippet_params
 		p params.inspect
-		params.require(:snippet).permit(:title, :code)
+		params.require(:snippet).permit(:title, :code, :language)
 	end
 end

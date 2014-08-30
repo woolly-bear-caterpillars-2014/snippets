@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+ // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -17,26 +17,42 @@
 
 
 $(function () {
-	var editor = ace.edit("snippet-code");
-	console.log(editor);
-	editor.setTheme("ace/theme/monokai");
-	editor.getSession().setMode("ace/mode/ruby");
-	var textarea = $('textarea[name="snippet[code]"]').hide();
-	editor.getSession().setValue(textarea.val());
-	editor.getSession().setTabSize(2);
-	editor.getSession().on('change', function(){
-	  textarea.val(editor.getSession().getValue());
-	  //console.log(textarea.val())
-	});
+	if ($("#snippet-code").length > 0) {
+		var editor = ace.edit("snippet-code");
+		console.log(editor);
+		editor.setTheme("ace/theme/monokai");
+		editor.getSession().setMode("ace/mode/ruby");
+		var textarea = $('textarea[name="snippet[code]"]').hide();
+		editor.getSession().setValue(textarea.val());
+		editor.getSession().setTabSize(2);
+		editor.getSession().on('change', function(){
+		  textarea.val(editor.getSession().getValue());
+		  //console.log(textarea.val())
+		});
 
-	$('.readonly').each(function(){
-		editor = ace.edit(this)
-    editor.setOptions({
-        mode: "ace/mode/ruby",
-        readOnly: true,
-        theme: 'ace/theme/monokai'
+		$(".editor-mode").change(function() {
+			mode = $(this).val()
+			editor.session.setMode("ace/mode/" + mode);
+		})
+	}
+	if ($('.readonly').length > 0) {
+		$('.readonly').each(function(){
+			editor_instance = ace.edit(this);
+			mode = $(this).attr('alt');
+	    editor_instance.setOptions({
+	        mode: "ace/mode/" + mode,
+	        readOnly: true,
+	        theme: 'ace/theme/monokai'
+	    })
+		})
+	}
+
+	if ($(".create-snippet").length > 0) {
+		/* Accordion */
+    $('.container').on('click', '.create-snippet h3', function() {
+        $(this).next().slideToggle('fast');
     })
-	})
+	}
 	// var snippet = ace.edit("snippet-readonly");
 	// snippet.setReadOnly(true);
 
@@ -48,8 +64,5 @@ $(function () {
 	})*/
 
 
-	$(".editor-mode").change(function() {
-		mode = $(this).val()
-		editor.session.setMode("ace/mode/" + mode);
-	})
+
 })

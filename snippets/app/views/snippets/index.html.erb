@@ -1,15 +1,16 @@
-<% unless @snippets.empty? %>
-  <h2>Snippets</h2>
-  <% @snippets.each do |snippet| %>
-      <div><%= snippet.title %></div>
-      <div><%= snippet.code %></div>
-      <div><%= link_to 'Edit', edit_snippet_path(snippet) %></div>
-      <div><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-  <% end %>
+<% if session[:user_id] %>
+  <div class="create-snippet">
+    <h3> Create a Snippet</h3>
+    <%= render 'form' %>
+    </div>
 <% end %>
 
-<h3> Create a Snippet</h3>
-<%= render 'form' %>
+<% unless @snippets.empty? %>
+  <h2>Snippets</h2>
+  <%= render @snippets %>
+<% end %>
+
+<br>
 
 
 

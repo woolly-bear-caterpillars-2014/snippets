@@ -1,4 +1,6 @@
 <div class="snippet">
-	<div class="snippet-title"><%= snippet.title %></div>
-	<div id="snippet-readonly" class="editor readonly" data-no-turbolink><%= snippet.code %></div>
+	<h2 class="snippet-title"><%= snippet.title %></h2>
+	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
+  <div><%= link_to 'Edit', edit_snippet_path(snippet) %></div>
+  <div><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 </div>
