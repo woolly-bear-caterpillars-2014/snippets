@@ -1,5 +1,6 @@
 <% if session[:user_id] %>
 
+  <%= link_to "Home", root_path %>
   <%= link_to "Log Out", users_logout_path, method: :delete %>
   <h1><%= @user.email %></h1>
 
