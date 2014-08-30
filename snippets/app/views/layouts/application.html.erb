@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Snippets</title>
+  <title>codebytes</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <nav>
+    <ul>
+      <% if session[:user_id] %>
+        <li><%= link_to "My Cheatsheets", user_path(session[:user_id]) %></li>
+        <li><%= link_to "Log Out", users_logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Log In', users_login_path %></li>
+        <li><%= link_to 'Sign Up', new_user_path %></li>
+      <% end %>
+    </ul>
+    <h1><a href="/"><span class="star">★</span> codebytes</a></h1>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
