@@ -18,6 +18,7 @@
 
 $(function () {
 	var editor = ace.edit("snippet-code");
+	//editor.setTheme("ace/theme/monokai");
 	editor.getSession().setMode("ace/mode/ruby");
 	var textarea = $('textarea[name="snippet[code]"]').hide();
 	editor.getSession().setValue(textarea.val());
@@ -27,8 +28,15 @@ $(function () {
 	  console.log(textarea.val())
 	});
 
-	// var editor2 = ace.edit("show");
-	// editor2.setReadOnly(true);
+	$('.readonly').each(function(){
+		editor = ace.edit(this)
+    editor.setOptions({
+        mode: "ace/mode/ruby",
+        readOnly: true
+    })
+	})
+	// var snippet = ace.edit("snippet-readonly");
+	// snippet.setReadOnly(true);
 
 	/*textarea.closest('form').submit(function (event) {
 		event.preventDefault();
