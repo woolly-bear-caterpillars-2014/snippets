@@ -8,8 +8,10 @@
   <%= link_to 'Signup', new_user_path %>
 <% end %>
 <br>
-<h4> Submit a New Snippet: </h4>
-<%=render 'form'%>
+<% if session[:user_id] %>
+  <h4> Submit a New Snippet: </h4>
+  <%=render 'form'%>
+<% end %>
 
 <table>
   <thead>
