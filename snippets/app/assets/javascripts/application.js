@@ -21,7 +21,12 @@ $(function () {
 		var editor = ace.edit("snippet-code");
 		console.log(editor);
 		editor.setTheme("ace/theme/monokai");
-		editor.getSession().setMode("ace/mode/ruby");
+		if ($(".editor-mode option:selected").length > 0) {
+			mode = $(".editor-mode option:selected").val()
+			editor.session.setMode("ace/mode/" + mode);
+		}
+		else
+			editor.getSession().setMode("ace/mode/ruby");
 		var textarea = $('textarea[name="snippet[code]"]').hide();
 		editor.getSession().setValue(textarea.val());
 		editor.getSession().setTabSize(2);
@@ -32,6 +37,7 @@ $(function () {
 
 		$(".editor-mode").change(function() {
 			mode = $(this).val()
+			console.log(mode);
 			editor.session.setMode("ace/mode/" + mode);
 		})
 	}
