@@ -4,6 +4,7 @@ class SnippetsController < ApplicationController
 		@snippets = Snippet.all
 		@snippet = Snippet.new
 		@user = User.find(session[:user_id])
+		@cheatsheet = @user.cheatsheets.first || @user.cheatsheets.create!
 	end
 
 	def show

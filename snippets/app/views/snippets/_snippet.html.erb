@@ -1,5 +1,5 @@
 <div class="snippet">
 	<div class="snippet-title"><%= snippet.title %></div>
 	<div id="snippet-readonly" class="editor readonly"><%= snippet.code %></div>
-	<%=link_to image_tag("http://hairnetwork.ca/wp-content/uploads/2012/10/Scissor-Favicon.png"), user_cheatsheet_path%> snip it!
+	<%=link_to('add to my cheatsheet', edit_user_cheatsheet_path(@user, snippet), method: 'put')%> 
 </div>
