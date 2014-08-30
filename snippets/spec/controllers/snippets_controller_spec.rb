@@ -20,7 +20,8 @@ describe SnippetsController do
       let(:snippet_params) do
         { snippet: {
           title: "snippert",
-          code: "codey"
+          code: "codey",
+          language: "ruby"
           }}
       end
 
