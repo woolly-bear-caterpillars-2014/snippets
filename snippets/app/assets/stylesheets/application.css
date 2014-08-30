@@ -26,3 +26,45 @@
 .snippet {
 	margin-bottom:20px;
 }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #ECECEC;
+  width: 100%;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h1 a {
+  color: #113F8C;
+  text-decoration: none;
+  position: absolute;
+  font-size: 30px;
+  top: 24px;
+  right: 25px;
+}
+
+nav {
+  margin: 0;
+  padding: 13px;
+  background: #38467A;
+  border-radius: 10px 0px 0px 10px;
+}
+
+nav a {
+  color: #F2F1EF;
+  padding: 3px;
+  text-decoration: none;
+}
+
+li {
+  display: inline;
+}
+
+.star {
+  color: #01C487;
+}
+
