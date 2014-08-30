@@ -56,7 +56,7 @@ describe UsersController do
       it "re-renders the users#new page" do
         post :create, :user => { email: "", password: "" }
 
-        expect(response).to render_template(:new)
+        expect(response).to redirect_to new_user_path
       end
     end
   end
@@ -65,6 +65,7 @@ describe UsersController do
     let(:user) { FactoryGirl.create(:user) }
 
     before do
+      session[:user_id] = user.id
       get :edit, :id => user.id
     end
 
@@ -81,9 +82,8 @@ describe UsersController do
 
       it "should redirect to index page" do
         session[:user_id] = user2.id
-
         get :edit, :id => user.id
-        expect(response).to redirect_to("/")
+        response.should redirect_to(root_path)
       end
     end
   end
@@ -144,10 +144,6 @@ describe UsersController do
       it "should not edit user" do
         expect(User.find(user.id).email).to eq user.email
       end
-
-      it "should redirect to index page" do
-        expect(response).to redirect_to("/")
-      end
     end
   end
 
@@ -166,7 +162,8 @@ describe UsersController do
       end
 
       it "should redirect to login page" do
-        expect(response).to redirect_to("session/new")
+        delete :destroy, id: user.id
+        response.should redirect_to(root_path)
       end
     end
 
@@ -178,7 +175,7 @@ describe UsersController do
       end
 
       it "should not delete user" do
-        expect(User.find(user.id)).to be
+        user2 { should_not exist }
       end
 
       it "should redirect to index page" do

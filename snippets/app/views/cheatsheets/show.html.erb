@@ -1,8 +1,11 @@
 <% if session[:user_id] %>
-
   <%= link_to "Log Out", users_logout_path, method: :delete %>
   <%= link_to "Edit Cheatsheet", edit_user_cheatsheet_path %>
   <%= link_to "Delete Cheatsheet", user_cheatsheet_path, method: :delete %>
+<% else %>
+  <%= link_to "Log In", users_login_path %>
+  <%= link_to "Sign Up", new_user_path %>
+<% end %>
 
   <div class="cheatsheet">
     <h2><%= cheatsheet.name %></h2>
@@ -15,22 +18,3 @@
       </div>
     <% end %>
   </div>
-
-<% else %>
-
-  <%= link_to "Log In", users_login_path %>
-  <%= link_to "Sign Up", new_user_path %>
-
-  <div class="cheatsheet">
-    <h2><%= cheatsheet.name %></h2>
-    <% cheatsheet.snippets.each do |snippet| %>
-      <div class="snippet">
-        <h3><%= snippet.title %></h3>
-        <div class="snipcode">
-          <%= snippet.code %><!-- Code Text Here -->
-        </div>
-      </div>
-    <% end %>
-
-<% end %>
-
