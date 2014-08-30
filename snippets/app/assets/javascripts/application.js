@@ -12,27 +12,29 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require ace/ace
 
+
 $(function () {
 	var editor = ace.edit("snippet-code");
-	//editor.setTheme("ace/theme/monokai");
+	console.log(editor);
+	editor.setTheme("ace/theme/monokai");
 	editor.getSession().setMode("ace/mode/ruby");
 	var textarea = $('textarea[name="snippet[code]"]').hide();
 	editor.getSession().setValue(textarea.val());
 	editor.getSession().setTabSize(2);
 	editor.getSession().on('change', function(){
 	  textarea.val(editor.getSession().getValue());
-	  console.log(textarea.val())
+	  //console.log(textarea.val())
 	});
 
 	$('.readonly').each(function(){
 		editor = ace.edit(this)
     editor.setOptions({
         mode: "ace/mode/ruby",
-        readOnly: true
+        readOnly: true,
+        theme: 'ace/theme/monokai'
     })
 	})
 	// var snippet = ace.edit("snippet-readonly");

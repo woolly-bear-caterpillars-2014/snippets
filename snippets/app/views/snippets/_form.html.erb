@@ -3,10 +3,10 @@
 		<%=f.label :title %> <br>
 		<%=f.text_field :title %>
 
-	
+
 	<div class="field snippet-editor">
 		<%=f.label :code %> <br>
-		<select class="editor-mode">
+		<select class="editor-mode" name="snippet[language]">
 				<option value="ruby">Ruby</option>
 				<option value="javascript">Javascript</option>
 				<option value="html">HTML</option>
@@ -15,7 +15,7 @@
 		<div id="snippet-code" class="editor"></div>
 		<%=f.text_area :code %>
 	</div>
-	
+
 	<div class="actions">
 		<%=f.submit %>
 	</div>
