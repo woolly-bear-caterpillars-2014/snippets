@@ -6,12 +6,7 @@
 
 	<div class="field snippet-editor">
 		<%=f.label :code %> <br>
-		<select class="editor-mode" name="snippet[language]">
-				<option value="ruby">Ruby</option>
-				<option value="javascript">Javascript</option>
-				<option value="html">HTML</option>
-				<option value="css">CSS</option>
-		  </select>
+		<%=f.select :language, ['ruby', 'javascript', 'html', 'css'], {}, class: 'editor-mode' %>
 		<div id="snippet-code" class="editor"></div>
 		<%=f.text_area :code %>
 	</div>
