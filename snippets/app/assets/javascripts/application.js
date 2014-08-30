@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+ // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -29,10 +29,16 @@ $(function () {
 	  //console.log(textarea.val())
 	});
 
+	$(".editor-mode").change(function() {
+		mode = $(this).val()
+		editor.session.setMode("ace/mode/" + mode);
+	})
+
 	$('.readonly').each(function(){
-		editor = ace.edit(this)
-    editor.setOptions({
-        mode: "ace/mode/ruby",
+		editor_instance = ace.edit(this);
+		mode = $(this).attr('alt');
+    editor_instance.setOptions({
+        mode: "ace/mode/" + mode,
         readOnly: true,
         theme: 'ace/theme/monokai'
     })
@@ -48,8 +54,5 @@ $(function () {
 	})*/
 
 
-	$(".editor-mode").change(function() {
-		mode = $(this).val()
-		editor.session.setMode("ace/mode/" + mode);
-	})
+
 })
