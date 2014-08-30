@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Cheatsheet, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Cheatsheet do
+
+  context "associations" do
+    let!(:cheatsheet) { Cheatsheet.new(name: "Enumms", user: User.new) }
+
+    describe "#user" do
+      it "should belong to a user" do
+        expect(cheatsheet).to respond_to(:user)
+      end
+    end
+  end
 end

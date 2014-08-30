@@ -34,7 +34,7 @@ end
 
 def user_clicks_through_to_sign_up_page
   visit "/"
-  click_link "Signup"
+  click_link "Sign Up"
 
   expect(page).to have_content("Email")
   expect(current_path).to eq("/users/new")
