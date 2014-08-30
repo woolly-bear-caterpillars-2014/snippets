@@ -15,12 +15,16 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render 'new'
+      redirect_to new_user_path
     end
   end
 
   def edit
-    @user = User.find(params[:id])
+    if session[:user_id] == params[:id].to_i
+      @user = User.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -38,7 +42,7 @@ class UsersController < ApplicationController
     user.destroy
     session.clear
     @user = User.new
-    render 'snippets/index'
+    redirect_to root_path
   end
 
   private
