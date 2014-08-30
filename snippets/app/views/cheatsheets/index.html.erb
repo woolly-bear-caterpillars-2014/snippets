@@ -1,3 +1,11 @@
+<% if session[:user_id] %>
+  <%= link_to "Profile", user_path(session[:user_id]) %>
+  <%= link_to "Log Out", users_logout_path, method: :delete %>
+<% else %>
+  <%= link_to 'Login', users_login_path %>
+  <%= link_to 'Signup', new_user_path %>
+<% end %>
+
 <% @cheatsheets.each do |cheatsheet| %>
   <div class="cheatsheet">
     <h2><%= cheatsheet.name %></h2>
