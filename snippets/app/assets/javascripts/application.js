@@ -46,6 +46,13 @@ $(function () {
 	    })
 		})
 	}
+
+	if ($(".create-snippet").length > 0) {
+		/* Accordion */
+    $('.container').on('click', '.create-snippet h3', function() {
+        $(this).next().slideToggle('fast');
+    })
+	}
 	// var snippet = ace.edit("snippet-readonly");
 	// snippet.setReadOnly(true);
 

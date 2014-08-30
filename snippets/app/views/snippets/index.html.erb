@@ -1,13 +1,16 @@
+<% if session[:user_id] %>
+  <div class="create-snippet">
+    <h3> Create a Snippet</h3>
+    <%= render 'form' %>
+    </div>
+<% end %>
+
 <% unless @snippets.empty? %>
   <h2>Snippets</h2>
   <%= render @snippets %>
 <% end %>
 
 <br>
-<% if session[:user_id] %>
-  <h3> Create a Snippet</h3>
-  <%= render 'form' %>
-<% end %>
 
 
 

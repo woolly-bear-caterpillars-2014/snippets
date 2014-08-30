@@ -68,3 +68,10 @@ li {
   color: #01C487;
 }
 
+.create-snippet h3 {
+  cursor:pointer;
+}
+.create-snippet form.new_snippet {
+  display:none;
+}
+
