@@ -1,6 +1,8 @@
 <div class="snippet">
 	<h2 class="snippet-title"><%= snippet.title %></h2>
 	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
-  <div><%= link_to 'Edit', edit_snippet_path(snippet) %></div>
-  <div><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <% if snippet.author.id == session[:user_id] %>
+    <div><%= link_to 'Edit', edit_snippet_path(snippet) %></div>
+    <div><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <% end %>
 </div>
