@@ -7,4 +7,12 @@ class Snippet < ActiveRecord::Base
 	has_many :cheatsheets, through: :cheatsheet_snippets
 	has_many :snippet_tags
 	has_many :tags, through: :snippet_tags
+
+	def self.search(search)
+	  if search
+	    where('title LIKE ?', "%#{search}%")
+	  else
+	    scoped
+	  end
+	end
 end
