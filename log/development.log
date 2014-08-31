@@ -11576,3 +11576,59 @@ SyntaxError (/Users/audreymcgowan/Desktop/dbc/snippets/snippets/app/views/snippe
   Rendered /Users/audreymcgowan/.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
   Rendered /Users/audreymcgowan/.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
   Rendered /Users/audreymcgowan/.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (66.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 16:01:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (18.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SnippetsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCheatsheet Load (0.6ms)[0m  [1mSELECT  "cheatsheets".* FROM "cheatsheets"  WHERE "cheatsheets"."user_id" = $1  ORDER BY "cheatsheets"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered snippets/_form.html.erb (98.5ms)
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.7ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (3.9ms)
+  Rendered snippets/index.html.erb within layouts/application (116.8ms)
+Completed 200 OK in 689ms (Views: 558.4ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 16:01:38 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 16:01:39 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 16:01:39 -0400
