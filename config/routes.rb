@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post 'users/login' => 'session#create'
   delete 'users/logout' => 'session#destroy'
 
+  get 'users/:user_id/cheatsheets/newsnippet/:id' => 'cheatsheets#add_snippet'
+
   resources :users do
     resources :cheatsheets
   end

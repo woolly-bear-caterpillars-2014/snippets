@@ -1,15 +1,8 @@
 class SnippetsController < ApplicationController
 	def index
-		if params[:search]
-			puts 'test'
-      puts params[:search] 
-      @snippets = Snippet.search(params[:search]).order("created_at DESC")
-    else
-      @snippets = Snippet.all
-    end
+		# @user = User.find(session[:user_id])
+		@snippets = Snippet.all
 		@snippet = Snippet.new
-		@user = User.find(session[:user_id])
-		@cheatsheet = @user.cheatsheets.first || @user.cheatsheets.create!
 	end
 
 	def show
@@ -52,7 +45,6 @@ class SnippetsController < ApplicationController
 
 	private
 	def snippet_params
-		p params.inspect
 		params.require(:snippet).permit(:title, :code, :language)
 	end
 end
