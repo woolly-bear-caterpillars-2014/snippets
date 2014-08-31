@@ -92,7 +92,9 @@ nav li {
 .star {
   color: #01C487;
 }
-
+.create-snippet {
+	margin-bottom:20px;
+}
 .create-snippet h3 {
   cursor:pointer;
 }
