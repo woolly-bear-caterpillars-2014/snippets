@@ -6,8 +6,6 @@ class SnippetsController < ApplicationController
       @snippets = Snippet.all
     end
 		@snippet = Snippet.new
-		@user = User.find(session[:user_id])
-		@cheatsheet = @user.cheatsheets.first || @user.cheatsheets.create!
 	end
 
 	def show
@@ -55,7 +53,6 @@ class SnippetsController < ApplicationController
 
 	private
 	def snippet_params
-		p params.inspect
 		params.require(:snippet).permit(:title, :code, :language)
 	end
 end
