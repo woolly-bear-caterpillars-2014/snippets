@@ -11796,3 +11796,1239 @@ Processing by UsersController#show as HTML
   Rendered cheatsheets/_show.html.erb (39.4ms)
   Rendered users/show.html.erb within layouts/application (41.7ms)
 Completed 200 OK in 151ms (Views: 47.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-31 17:00:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCheatsheet Load (0.3ms)[0m  [1mSELECT "cheatsheets".* FROM "cheatsheets"  WHERE "cheatsheets"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mSnippet Load (0.5ms)[0m  SELECT "snippets".* FROM "snippets" INNER JOIN "cheatsheet_snippets" ON "snippets"."id" = "cheatsheet_snippets"."snippet_id" WHERE "cheatsheet_snippets"."cheatsheet_id" = $1  [["cheatsheet_id", 1]]
+  Rendered cheatsheets/_show.html.erb (54.6ms)
+  Rendered users/show.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 451ms (Views: 373.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:14 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:00:15 -0400
+Processing by SnippetsController#index as HTML
+  Rendered snippets/_form.html.erb (144.0ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "snippets"[0m
+  [1m[35mSnippet Load (0.2ms)[0m  SELECT "snippets".* FROM "snippets"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (3.4ms)
+  Rendered snippets/index.html.erb within layouts/application (174.0ms)
+Completed 200 OK in 204ms (Views: 202.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+Processing by SnippetsController#index as HTML
+  Rendered snippets/_form.html.erb (2.1ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.9ms)
+  Rendered snippets/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:00:16 -0400
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7r3ipFKan5SQ9puuAFCokli52D/Dg2x82lft+Qjsxxg="}
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+Processing by SnippetsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "snippets"[0m
+  [1m[35mSnippet Load (0.2ms)[0m  SELECT "snippets".* FROM "snippets"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.7ms)
+  Rendered snippets/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:09:32 -0400
+
+
+Started GET "/users/login" for 127.0.0.1 at 2014-08-31 17:09:33 -0400
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-08-31 17:09:35 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"isV8LLJmIa9yVJegjmjJGbVgNhw3ccu3vRZmx0jnthQ=", "email"=>"dsfafds", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'dsfafds' LIMIT 1
+  Rendered session/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 9.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:35 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:35 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:35 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:09:35 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:36 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:36 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:36 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:36 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:09:36 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:10:56 -0400
+Processing by SnippetsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "snippets"[0m
+  [1m[35mSnippet Load (0.2ms)[0m  SELECT "snippets".* FROM "snippets"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.3ms)
+  Rendered snippets/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:10:56 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:10:56 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:10:56 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:56 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:10:57 -0400
+
+
+Started GET "/users/login" for 127.0.0.1 at 2014-08-31 17:11:01 -0400
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2014-08-31 17:11:07 -0400
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+Processing by SnippetsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.1ms)
+  Rendered snippets/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:11:12 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:11:13 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:11:13 -0400
+
+
+Started GET "/users/login" for 127.0.0.1 at 2014-08-31 17:13:46 -0400
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"isV8LLJmIa9yVJegjmjJGbVgNhw3ccu3vRZmx0jnthQ=", "email"=>"alextle0125@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'alextle0125@gmail.com' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/snippets
+Completed 302 Found in 70ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/snippets" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+Processing by SnippetsController#index as HTML
+  Rendered snippets/_form.html.erb (1.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.4ms)
+  Rendered snippets/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:15:11 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=Building" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Building"}
+  Rendered snippets/_form.html.erb (2.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "snippets"[0m
+  [1m[35mSnippet Load (0.2ms)[0m  SELECT "snippets".* FROM "snippets"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.2ms)
+  Rendered snippets/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:15:23 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:15:24 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=lkdsjfokh" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"lkdsjfokh"}
+  Rendered snippets/_form.html.erb (1.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.3ms)
+  Rendered snippets/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:15:39 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=" for 127.0.0.1 at 2014-08-31 17:18:56 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  Rendered snippets/_form.html.erb (1.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "snippets"[0m
+  [1m[35mSnippet Load (0.3ms)[0m  SELECT "snippets".* FROM "snippets"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.8ms)
+  Rendered snippets/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:18:57 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:19:31 -0400
+
+
+Started POST "/snippets" for 127.0.0.1 at 2014-08-31 17:23:40 -0400
+Processing by SnippetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"isV8LLJmIa9yVJegjmjJGbVgNhw3ccu3vRZmx0jnthQ=", "snippet"=>{"title"=>"Form Creation", "language"=>"html", "code"=>"<form name=\"[NAME]\" action=\"[ROUTE]\" method=\"POST\">\r\n  <input type=\"[TEXT]\" placeholder=\"[PLACEHOLDER]\">\r\n  <input type=\"[PASSWORD]\" placeholder=\"[PLACEHOLDER]\">\r\n  <input type=\"Submit\" value=\"[SUBMIT]\">\r\n</form>"}, "commit"=>"Create Snippet"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "snippets" ("code", "created_at", "language", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["code", "<form name=\"[NAME]\" action=\"[ROUTE]\" method=\"POST\">\r\n  <input type=\"[TEXT]\" placeholder=\"[PLACEHOLDER]\">\r\n  <input type=\"[PASSWORD]\" placeholder=\"[PLACEHOLDER]\">\r\n  <input type=\"Submit\" value=\"[SUBMIT]\">\r\n</form>"], ["created_at", "2014-08-31 21:23:40.847036"], ["language", "html"], ["title", "Form Creation"], ["updated_at", "2014-08-31 21:23:40.847036"], ["user_id", 1]]
+  [1m[36m (42.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/snippets
+Completed 302 Found in 53ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/snippets" for 127.0.0.1 at 2014-08-31 17:23:40 -0400
+Processing by SnippetsController#index as HTML
+  Rendered snippets/_form.html.erb (1.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (2.1ms)
+  Rendered snippets/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:23:41 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=creation" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"creation"}
+  Rendered snippets/_form.html.erb (2.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.3ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (3.5ms)
+  Rendered snippets/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:23:48 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=creation" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"creation"}
+  Rendered snippets/_form.html.erb (2.5ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (2.5ms)
+  Rendered snippets/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:23:49 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=array" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"array"}
+  Rendered snippets/_form.html.erb (1.9ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (3.3ms)
+  Rendered snippets/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:23:59 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=html" for 127.0.0.1 at 2014-08-31 17:24:04 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"html"}
+  Rendered snippets/_form.html.erb (1.8ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (2.1ms)
+  Rendered snippets/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:24:05 -0400
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"isV8LLJmIa9yVJegjmjJGbVgNhw3ccu3vRZmx0jnthQ="}
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+Processing by SnippetsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (1.8ms)
+  Rendered snippets/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:24:12 -0400
+
+
+Started GET "/users//cheatsheets/newsnippet/2" for 127.0.0.1 at 2014-08-31 17:24:16 -0400
+
+ActionController::RoutingError (No route matches [GET] "/users/cheatsheets/newsnippet/2"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.3ms)
+
+
+Started GET "/users//cheatsheets/newsnippet/2" for 127.0.0.1 at 2014-08-31 17:24:16 -0400
+
+ActionController::RoutingError (No route matches [GET] "/users/cheatsheets/newsnippet/2"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (73.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:03 -0400
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-08-31 17:26:05 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2014-08-31 17:26:09 -0400
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2014-08-31 17:26:11 -0400
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+Processing by SnippetsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.4ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (2.9ms)
+  Rendered snippets/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:26:27 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:26:56 -0400
+Processing by SnippetsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (2.7ms)
+  Rendered snippets/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:26:57 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+Processing by SnippetsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.3ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (3.1ms)
+  Rendered snippets/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:27:09 -0400
+
+
+Started GET "/users/login" for 127.0.0.1 at 2014-08-31 17:27:11 -0400
+Processing by SessionController#new as HTML
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
