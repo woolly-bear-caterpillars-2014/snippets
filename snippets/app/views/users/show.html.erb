@@ -1,6 +1,6 @@
 <% if session[:user_id] %>
 
-  <%= link_to "Home", root_path %>
+  <div data-no-turbolink><%= link_to "Home", root_path %></div>
 
   <h1><%= @user.email %></h1>
 
