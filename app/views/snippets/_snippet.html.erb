@@ -1,5 +1,12 @@
 <div class="snippet">
-	<h2 class="snippet-title"><%= snippet.title %></h2><a href="users/<%= session[:user_id] %>/cheatsheets/newsnippet/<%= snippet.id %>"><img class="add_button" src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/add_list.png" width="3%"></a>
+	<h2 class="snippet-title"><%= snippet.title %></h2>
+
+  <% if session[:user_id] %>
+    <a href="users/<%= session[:user_id] %>/cheatsheets/newsnippet/<%= snippet.id %>"><img class="add_button" src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/add_list.png" width="3%"></a>
+  <% else %>
+    <a href="/users/login"><img class="add_button" src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/add_list.png" width="3%"></a>
+  <% end %>
+
 	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
   <% if snippet.author.id == session[:user_id] %>
     <div><%= link_to 'Edit', edit_snippet_path(snippet) %></div>
