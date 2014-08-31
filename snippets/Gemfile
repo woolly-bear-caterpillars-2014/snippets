@@ -38,6 +38,7 @@ gem 'simplecov'
 
 # Code Editor
 gem 'ace-rails-ap'
+gem 'rake'
 
 
 
