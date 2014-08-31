@@ -15,4 +15,8 @@ class Snippet < ActiveRecord::Base
 	    scoped
 	  end
 	end
+
+	def tag_list
+		return self.tags.map {|tag| tag.title}.join(", ") if self.tags
+	end
 end
