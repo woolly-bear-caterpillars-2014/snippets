@@ -14,8 +14,4 @@ class Tag < ActiveRecord::Base
     end
     tag_array
   end
-
-  def self.tag_list(tags)
-    tags.map {|tag| tag.name}.join(", ")
-  end
 end
