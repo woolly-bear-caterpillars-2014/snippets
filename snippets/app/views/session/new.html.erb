@@ -1,6 +1,11 @@
-<%= link_to "Home", root_path %>
-
 <%= form_tag users_login_path do |f| %>
+  <% if @errors %>
+    <div class="form-errors">
+      <ul>
+        <li><%= @errors %></li>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= label_tag :email %><br>
     <%= text_field_tag :email %>

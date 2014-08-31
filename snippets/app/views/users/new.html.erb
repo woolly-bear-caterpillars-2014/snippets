@@ -1,6 +1,13 @@
-<%= link_to "Home", root_path %>
-
 <%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="form-errors">
+      <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
