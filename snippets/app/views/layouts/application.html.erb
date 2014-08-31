@@ -16,6 +16,12 @@
         <li><%= link_to 'Log In', users_login_path %></li>
         <li><%= link_to 'Sign Up', new_user_path %></li>
       <% end %>
+        <li>
+          <%= form_tag snippets_path, :method => 'get', :id => "snippet_search" do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </li>
     </ul>
     <h1 data-no-turbolink><a href="/"><span class="star">★</span> codebytes</a></h1>
   </nav>
