@@ -1,8 +1,13 @@
 <div class="snippet">
+<p> </p>
+
+  <%=link_to('add to my cheatsheet', edit_user_cheatsheet_path(@user, snippet), method: 'put')%
+
 	<h2 class="snippet-title"><%= snippet.title %></h2><a href=""><img class="add_button" src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/add_list.png" width="3%"></a>
 	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
   <% if snippet.author.id == session[:user_id] %>
     <div><%= link_to 'Edit', edit_snippet_path(snippet), data: { no_turbolink: true } %></div>
     <div><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
   <% end %>
+
 </div>
