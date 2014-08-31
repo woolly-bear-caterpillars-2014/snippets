@@ -35,6 +35,12 @@
 	margin-bottom:20px;
 }
 
+.add_button {
+  position: absolute;
+  margin-left: 600px;
+  padding: 5px;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #ECECEC;
