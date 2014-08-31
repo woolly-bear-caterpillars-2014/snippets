@@ -114,3 +114,15 @@ footer {
   background: #454545;
   color: #F2F1EF;
 }
+.form-errors ul {
+	padding-left:0;
+	margin-bottom:20px;
+	color:red;
+	list-style:none;
+}
+.notice {
+	color:red;
+}
+.field_with_errors {
+	display:inline;
+}
