@@ -11,6 +11,11 @@
 		<%=f.text_area :code %>
 	</div>
 
+	<div class="field">
+		<%= label_tag :tag_list, "Tags (separated by commas)" %><br />
+	  <%= text_field_tag :tag_list %>
+	</div>
+
 	<div class="actions">
 		<%=f.submit %>
 	</div>
