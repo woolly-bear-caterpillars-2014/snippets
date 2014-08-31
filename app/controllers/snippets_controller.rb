@@ -1,7 +1,7 @@
 class SnippetsController < ApplicationController
 	def index
 		# @user = User.find(session[:user_id])
-		@snippets = Snippet.all
+		@snippets = Snippet.all.order(snip_count: :desc)
 		@snippet = Snippet.new
 	end
 

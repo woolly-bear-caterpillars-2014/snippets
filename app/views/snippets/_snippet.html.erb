@@ -1,5 +1,6 @@
 <div class="snippet">
 	<h2 class="snippet-title"><%= snippet.title %></h2>
+  <p>Snip Count: <%= snippet.snip_count %></p>
 
   <% if session[:user_id] %>
     <a href="users/<%= session[:user_id] %>/cheatsheets/newsnippet/<%= snippet.id %>"><img class="add_button" src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/add_list.png" width="3%"></a>

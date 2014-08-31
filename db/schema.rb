@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140829145710) do
     t.string   "title"
     t.text     "code"
     t.string   "language"
+    t.integer  "snip_count", default: 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

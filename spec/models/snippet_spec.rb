@@ -17,7 +17,7 @@ describe Snippet do
 
     describe "#author" do
       it "should belong to an author" do
-        expect(snippet).to respond_to(:authorsn)
+        expect(snippet).to respond_to(:author)
       end
     end
 
