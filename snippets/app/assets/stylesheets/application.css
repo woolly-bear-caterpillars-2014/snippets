@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  margin: 0;
+ }
+
+ html, body {
+  height: 100%;
+ }
 .snippet-editor {
 	position:relative;
 }
@@ -34,8 +42,12 @@ body {
 }
 
 .container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
   width: 600px;
-  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 a {
@@ -43,13 +55,14 @@ h1 a {
   text-decoration: none;
   position: absolute;
   font-size: 30px;
-  top: 24px;
+  top: 26px;
   right: 25px;
 }
 
 nav {
-  margin: 0;
-  padding: 13px;
+  margin: 5px 0 0 5px;
+  height: 60px;
+  padding: 15px;
   background: #38467A;
   border-radius: 10px 0px 0px 10px;
 }
@@ -60,7 +73,13 @@ nav a {
   text-decoration: none;
 }
 
-li {
+nav ul {
+  position: absolute;
+  top: 40px;
+  left: 25px;
+}
+
+nav li {
   display: inline;
 }
 
@@ -68,3 +87,22 @@ li {
   color: #01C487;
 }
 
+.create-snippet h3 {
+  cursor:pointer;
+}
+.create-snippet form.new_snippet {
+  display:none;
+}
+
+footer, .push {
+  height: 4em;
+}
+
+footer {
+  font-weight: lighter;
+  line-height: 20px;
+  letter-spacing: 1px;
+  height: 100px;
+  background: #454545;
+  color: #F2F1EF;
+}
