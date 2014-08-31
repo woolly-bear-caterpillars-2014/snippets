@@ -1,8 +1,6 @@
 class SnippetsController < ApplicationController
 	def index
 		if params[:search]
-			puts 'test'
-      puts params[:search] 
       @snippets = Snippet.search(params[:search]).order("created_at DESC")
     else
       @snippets = Snippet.all
