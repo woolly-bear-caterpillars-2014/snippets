@@ -12,7 +12,7 @@ class CheatsheetsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @cheatsheet = @user.cheatsheets.create(cheatsheet_params)
+    @cheatsheet = Cheatsheet.create(cheatsheet_params)
     redirect_to user_cheatsheet_path
   end
 
@@ -26,15 +26,16 @@ class CheatsheetsController < ApplicationController
   end
 
   def update
-    @user = User.find(session[:user_id])
-    @cheatsheet = @user.cheatsheets.first ||= @user.cheatsheets.create
-    @snippet = Snippet.find(params[:snippet_id])
-    @cheatsheet.snippets << @snippet
-    @cheatsheet.save
+    # @cheatsheet = Cheatsheet.find(params[:id])
+    # @cheatsheet.update(cheatsheet_params)
+    # redirect_to user_cheatsheet_path
   end
 
-  def snip
-  
+  def add_snippet
+    user = User.find(params[:user_id])
+    @snippet = Snippet.find(params[:id])
+    user.cheatsheets.first.snippets << @snippet
+    redirect_to user_path(user.id)
   end
 
   def destroy
@@ -46,9 +47,5 @@ class CheatsheetsController < ApplicationController
   private
     def cheatsheet_params
       params.require(:cheatsheet).permit(:name)
-    end
-
-    def snippet_params
-      params.require(:snippet).permit(:snippet_id)
     end
 end
