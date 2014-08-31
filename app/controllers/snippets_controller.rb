@@ -39,6 +39,11 @@ class SnippetsController < ApplicationController
 		@snippet = Snippet.find(params[:id])
 		@snippet.update(snippet_params)
 		if @snippet.save
+			tag_list = Tag.create_tags(params[:tag_list])
+			p tag_list
+		  tag_list.each do |tag_id|
+		    @snippet.snippet_tags.create(tag_id: tag_id)
+		  end
 			redirect_to snippet_path(@snippet)
 		else
 			redirect_to edit_snippet_path(@snippet)
