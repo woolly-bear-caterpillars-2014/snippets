@@ -13,11 +13,11 @@ describe Snippet do
   end
 
   context "associations" do
-    let!(:snippet) { Snippet.new(title: "Enumms", code: "def method", language: "ruby", user: User.new) }
+    let!(:snippet) { Snippet.new(title: "Enumms", code: "def method", language: "ruby", author: User.new) }
 
-    describe "#user" do
-      it "should belong to a user" do
-        expect(snippet).to respond_to(:user)
+    describe "#author" do
+      it "should belong to an author" do
+        expect(snippet).to respond_to(:author)
       end
     end
 
