@@ -13455,3 +13455,281 @@ Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:14:04 -040
 
 
 Started GET "/assets/ace/worker-javascript.js" for 127.0.0.1 at 2014-08-31 17:14:04 -0400
+
+
+Started GET "/snippets" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+Processing by SnippetsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCheatsheet Load (0.2ms)[0m  [1mSELECT  "cheatsheets".* FROM "cheatsheets"  WHERE "cheatsheets"."user_id" = $1  ORDER BY "cheatsheets"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered snippets/_form.html.erb (1.6ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (8.9ms)
+  Rendered snippets/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/ace/mode-javascript.js" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/assets/ace/worker-javascript.js" for 127.0.0.1 at 2014-08-31 17:17:00 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=test" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"test"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCheatsheet Load (0.2ms)[0m  [1mSELECT  "cheatsheets".* FROM "cheatsheets"  WHERE "cheatsheets"."user_id" = $1  ORDER BY "cheatsheets"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered snippets/_form.html.erb (1.8ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "snippets"  WHERE (title LIKE '%test%')
+  [1m[36mSnippet Load (0.4ms)[0m  [1mSELECT "snippets".* FROM "snippets"  WHERE (title LIKE '%test%')  ORDER BY created_at DESC[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (7.0ms)
+  Rendered snippets/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 91ms (Views: 85.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/ace/mode-javascript.js" for 127.0.0.1 at 2014-08-31 17:20:11 -0400
+
+
+Started GET "/assets/ace/worker-javascript.js" for 127.0.0.1 at 2014-08-31 17:20:12 -0400
+
+
+Started GET "/snippets?utf8=%E2%9C%93&search=html" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+Processing by SnippetsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"html"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCheatsheet Load (0.3ms)[0m  [1mSELECT  "cheatsheets".* FROM "cheatsheets"  WHERE "cheatsheets"."user_id" = $1  ORDER BY "cheatsheets"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered snippets/_form.html.erb (1.7ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "snippets"  WHERE (title LIKE '%html%')
+  [1m[36mSnippet Load (0.3ms)[0m  [1mSELECT "snippets".* FROM "snippets"  WHERE (title LIKE '%html%')  ORDER BY created_at DESC[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (2.5ms)
+  Rendered snippets/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:20:20 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+Processing by SnippetsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCheatsheet Load (0.2ms)[0m  [1mSELECT  "cheatsheets".* FROM "cheatsheets"  WHERE "cheatsheets"."user_id" = $1  ORDER BY "cheatsheets"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered snippets/_form.html.erb (1.7ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "snippets"
+  [1m[36mSnippet Load (0.2ms)[0m  [1mSELECT "snippets".* FROM "snippets"[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "snippet_tags" ON "tags"."id" = "snippet_tags"."tag_id" WHERE "snippet_tags"."snippet_id" = $1  [["snippet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered snippets/_snippet.html.erb (11.4ms)
+  Rendered snippets/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/session.css?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/cheatsheets.css?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/cheatsheets.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/session.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/ace/ace.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/ace/theme-monokai.js" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/ace/mode-ruby.js" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/ace/mode-javascript.js" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/ace/mode-html.js" for 127.0.0.1 at 2014-08-31 17:21:57 -0400
+
+
+Started GET "/assets/ace/worker-javascript.js" for 127.0.0.1 at 2014-08-31 17:21:58 -0400
