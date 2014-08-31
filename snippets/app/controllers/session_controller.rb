@@ -9,7 +9,8 @@ class SessionController < ApplicationController
       session[:user_id] = @user.id
       redirect_to snippets_path
     else
-      redirect_to 'new'
+      @errors = "Invalid username or password"
+      render 'new'
     end
   end
 

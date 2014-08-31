@@ -26,6 +26,9 @@
     <h1 data-no-turbolink><a href="/"><span class="star">★</span> codebytes</a></h1>
   </nav>
   <div class="container">
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
     <%= yield %>
     <div class="push"></div>
   </div>
