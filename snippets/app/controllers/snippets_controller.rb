@@ -1,7 +1,12 @@
 class SnippetsController < ApplicationController
 	def index
-		# @user = User.find(session[:user_id])
-		@snippets = Snippet.all
+		if params[:search]
+			puts 'test'
+      puts params[:search] 
+      @snippets = Snippet.search(params[:search]).order("created_at DESC")
+    else
+      @snippets = Snippet.all
+    end
 		@snippet = Snippet.new
 		@user = User.find(session[:user_id])
 		@cheatsheet = @user.cheatsheets.first || @user.cheatsheets.create!
