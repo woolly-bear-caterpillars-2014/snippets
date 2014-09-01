@@ -39,12 +39,6 @@
   text-align: left;
 }
 
-.new_snippet {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
 .snippet {
   display: inline-block;
 	margin-bottom: 20px;
@@ -189,6 +183,11 @@ nav li {
 }
 .new_snippet label {
   margin-bottom:5px;
+}
+.new_snippet, .edit_snippet {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 footer, .push {
