@@ -1,19 +1,19 @@
-<%= link_to "Home", root_path %>
-<%= link_to "Profile", user_path(session[:user_id]) %>
-<%= link_to "Log Out", users_logout_path, method: :delete %>
+<div class="view">
+  <div class="form-elements">
+    <%= form_for @user do |f| %>
+      <p>
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </p>
 
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
+      <p>
+        <%= f.label :password %><br>
+        <%= f.password_field :password %>
+      </p>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>

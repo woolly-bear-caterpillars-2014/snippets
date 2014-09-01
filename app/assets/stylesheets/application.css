@@ -36,7 +36,15 @@
 	position:relative;
 	border: 1px solid #DDD;
 	border-radius: 4px;
+  text-align: left;
 }
+
+.new_snippet {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
 .snippet {
   display: inline-block;
 	margin-bottom: 20px;
@@ -70,17 +78,18 @@ body {
   height: 100%;
   margin: 0 auto -4em;
   padding-top: 90px;
-  width: 600px;
+  text-align: center;
+  width: 100%;
 }
 
-.snippets_container {
+/*.snippets_container {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin-left: -65%;
   width: 235%;
   background: #E0E0EB;
-}
+}*/
 
 .view {
   margin: 175px auto;
@@ -168,6 +177,19 @@ nav li {
 .create-snippet form.new_snippet {
   display:none;
 }
+.create-snippet .field {
+  margin:5px 0;
+  display:block;
+}
+.new_snippet {
+  padding:10px 0;
+}
+.create-snippet input {
+  padding:2px 4px;
+}
+.new_snippet label {
+  margin-bottom:5px;
+}
 
 footer, .push {
   height: 4em;
@@ -240,5 +262,15 @@ footer {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+@media screen and (max-width: 1250px){
+
+.snippet {
+  padding:0;
+  display:block;
+  margin:0 auto 20px;
+}
+
 }
 
