@@ -39,6 +39,14 @@ class CheatsheetsController < ApplicationController
     redirect_to user_path(user.id)
   end
 
+  def remove_snippet
+    user = User.find(params[:user_id])
+    @snippet = Snippet.find(params[:id])
+    user.cheatsheets.first.cheatsheet_snippets.find_by_snippet_id(@snippet.id).destroy
+    @snippet.decrement!(:snip_count)
+    redirect_to user_path(user.id)
+  end
+
   def destroy
     cheatsheet = Cheatsheet.find(params[:id])
     cheatsheet.destroy

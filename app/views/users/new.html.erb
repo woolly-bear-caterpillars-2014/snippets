@@ -1,24 +1,26 @@
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="form-errors">
-      <ul>
-      <% @user.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="view">
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="form-errors">
+        <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </p>
+
+    <p>
+      <%= f.submit "Sign Up" %>
+    </p>
   <% end %>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
-
-  <p>
-    <%= f.submit "Sign Up" %>
-  </p>
-<% end %>
+</div>
