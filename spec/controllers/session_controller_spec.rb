@@ -20,7 +20,7 @@ describe SessionController do
     it "redirects to the user login" do
      post :create, email: "notvalid_email@email.com"
 
-     expect(response).to redirect_to 'new'
+     expect(response).to render_template 'new'
     end
 
     it "session is not set" do

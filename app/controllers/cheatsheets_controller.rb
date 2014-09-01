@@ -35,6 +35,7 @@ class CheatsheetsController < ApplicationController
     user = User.find(params[:user_id])
     @snippet = Snippet.find(params[:id])
     user.cheatsheets.first.snippets << @snippet
+    @snippet.increment!(:snip_count)
     redirect_to user_path(user.id)
   end
 
