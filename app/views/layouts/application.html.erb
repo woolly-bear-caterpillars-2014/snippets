@@ -31,7 +31,7 @@
       <% end %>
         <li>
           <%= form_tag snippets_path, :method => 'get', :id => "snippet_search" do %>
-            <%= text_field_tag :search, params[:search] %>
+            <%= text_field_tag :search, params[:search], size: "50" %>
             <%= submit_tag "Search", :name => nil %>
           <% end %>
         </li>
