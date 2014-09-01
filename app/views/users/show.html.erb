@@ -1,8 +1,6 @@
 <% if session[:user_id] %>
 
   <div id="wrapper">
-
-        <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
@@ -10,18 +8,25 @@
                         &#9651; TOP
                     </a>
                 </li>
-                <% @user.snippets.each do |snippet| %>
-                  <% snippet.tags.each do |tag| %>
-                    <li>
-                        <a href="#<%= tag.title %>"><%= tag.title.upcase %></a>
-                    </li>
-                  <% end %>
+                <!-- THE LOGIC BELOW SHOULD PROBABLY BE MOVED INTO THE CONTROLLER -->
+                <% unique_tags = [] %>
+                <% @user.cheatsheets.first.snippets.each do |snippet| %>
+                    <% snippet.tags.each do |tag| %>
+                      <% unique_tags << tag.title %>
+                    <% end %>
                 <% end %>
+
+                <% unique_tags = unique_tags.uniq %>
+                <!-- LOGIC-TO-BE-MOVED TO CONTROLLER ENDS HERE -->
+
+                <% unique_tags.each do |tag| %>
+                  <li>
+                      <a href="#<%= tag %>"><%= tag.upcase %></a>
+                  </li>
+              <% end %>
             </ul>
         </div>
-        <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
@@ -30,8 +35,6 @@
                 </div>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
-
     </div>
 
     <%= render 'cheatsheets/show' %>

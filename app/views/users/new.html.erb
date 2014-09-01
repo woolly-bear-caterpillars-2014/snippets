@@ -1,26 +1,36 @@
 <div class="view">
-  <%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
-      <div class="form-errors">
-        <ul>
-        <% @user.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <p>
-      <%= f.label :email %><br>
-      <%= f.text_field :email %>
-    </p>
+  <div class="form-elements">
+    <h1>welcome to codebytes.</h1>
+    <h4 style="margin-right: 85px;">we want to help make learning to code easier</h4>
+    <h3 style="margin-left: 135px;">sign up <span style="font-size: 14px;">and create your own cheatsheet</span></h3>
+    <h4 style="margin-right: 135px;">be the best part of our community</h4>
+    <h5 style="margin-right: 135px;">dont worry, we wont tell</h5>
+    <h4 style="margin-left: 135px; margin-bottom: 50px">just code, code, code...</h4>
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div class="form-errors">
+          <ul>
+          <% @user.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <div class="form">
+        <p>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </p>
 
-    <p>
-      <%= f.label :password %><br>
-      <%= f.password_field :password %>
-    </p>
+        <p>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </p>
 
-    <p>
-      <%= f.submit "Sign Up" %>
-    </p>
-  <% end %>
+        <p style="margin-right: 15%">
+          <%= f.submit "Sign Up" %>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>

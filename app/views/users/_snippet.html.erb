@@ -7,7 +7,6 @@
 	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
 	<% if snippet.tags %>
 	  <div class="tag-list">
-	  	Tags:
 	  	<ul class="tags">
 	  	<% snippet.tags.each do |tag| %>
 	  		<li class="tag"><%= tag.title %></li>

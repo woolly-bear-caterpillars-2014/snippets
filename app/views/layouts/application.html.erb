@@ -21,13 +21,13 @@
   <nav>
     <ul>
       <% if session[:user_id] %>
-        <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
-        <li><%= link_to "Edit Account", edit_user_path(session[:user_id]) %></li>
-        <li><%= link_to "Delete Account", user_path(session[:user_id]), method: :delete %></li>
-        <li><%= link_to "Log Out", users_logout_path, method: :delete %></li>
+        <li><%= link_to "profile", user_path(session[:user_id]) %></li>
+        <li><%= link_to "edit account", edit_user_path(session[:user_id]) %></li>
+        <li><%= link_to "delete account", user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to "log out", users_logout_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to 'Log In', users_login_path %></li>
-        <li><%= link_to 'Sign Up', new_user_path %></li>
+        <li><%= link_to 'log in', users_login_path %></li>
+        <li><%= link_to 'sign up', new_user_path %></li>
       <% end %>
         <li>
           <%= form_tag snippets_path, :method => 'get', :id => "snippet_search" do %>
