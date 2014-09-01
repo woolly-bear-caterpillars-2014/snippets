@@ -11,5 +11,5 @@
   <div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
   <% if snippet.author.id == session[:user_id] %>
     <div><%= link_to 'Edit', edit_snippet_path(snippet) %></div>
-    <div><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <div><%= link_to 'Delete', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
   <% end %>
