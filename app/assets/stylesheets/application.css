@@ -171,17 +171,17 @@ nav li {
 .create-snippet form.new_snippet {
   display:none;
 }
-.create-snippet .field {
+.create-snippet .field, .edit-snippet .field {
   margin:5px 0;
   display:block;
 }
-.new_snippet {
+.new_snippet, .edit_snippet {
   padding:10px 0;
 }
-.create-snippet input {
+.create-snippet input, .edit_snippet input {
   padding:2px 4px;
 }
-.new_snippet label {
+.new_snippet label, .edit_snippet label {
   margin-bottom:5px;
 }
 .new_snippet, .edit_snippet {
