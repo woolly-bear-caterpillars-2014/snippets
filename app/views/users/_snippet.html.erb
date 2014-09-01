@@ -1,10 +1,10 @@
-<div class="snippet">
+<div class="snippet" id="<%= snippet.title %>">
 	<h2 class="snippet-title"><%= snippet.title %></h2>
 
 	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
 	<% if snippet.tags %>
 	  <div class="tag-list">
-	  	Tags: 
+	  	Tags:
 	  	<ul class="tags">
 	  	<% snippet.tags.each do |tag| %>
 	  		<li class="tag"><%= tag.title %></li>

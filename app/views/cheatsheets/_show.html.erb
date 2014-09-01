@@ -1,6 +1,6 @@
 <% @cheatsheets.each do |cheatsheet| %>
   <div class="cheatsheet">
-    <h2><%= cheatsheet.name %></h2>
+    <!-- <h2><%= cheatsheet.name %></h2> -->
     <% if cheatsheet.snippets %>
       <%= render partial: "snippet", collection: cheatsheet.snippets %>
     <% end %>
