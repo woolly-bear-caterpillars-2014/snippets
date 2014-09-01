@@ -5,20 +5,33 @@
   <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
   <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+  <script src="js/jquery-1.11.0.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+
 </head>
 <body>
   <nav>
     <ul>
       <% if session[:user_id] %>
-        <li><%= link_to "My Cheatsheets", user_path(session[:user_id]) %></li>
-        <li><%= link_to "Log Out", users_logout_path, method: :delete %></li>
+        <li><%= link_to "profile", user_path(session[:user_id]) %></li>
+        <li><%= link_to "edit account", edit_user_path(session[:user_id]) %></li>
+        <li><%= link_to "delete account", user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to "log out", users_logout_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to 'Log In', users_login_path %></li>
-        <li><%= link_to 'Sign Up', new_user_path %></li>
+        <li><%= link_to 'log in', users_login_path %></li>
+        <li><%= link_to 'sign up', new_user_path %></li>
       <% end %>
         <li>
           <%= form_tag snippets_path, :method => 'get', :id => "snippet_search" do %>
-            <%= text_field_tag :search, params[:search] %>
+            <%= text_field_tag :search, params[:search], size: "50" %>
             <%= submit_tag "Search", :name => nil %>
           <% end %>
         </li>
@@ -32,8 +45,5 @@
     <%= yield %>
     <div class="push"></div>
   </div>
-  <footer>
-    <div>Yep, this is a footer</div>
-  </footer>
 </body>
 </html>
