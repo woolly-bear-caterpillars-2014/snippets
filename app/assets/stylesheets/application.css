@@ -40,9 +40,9 @@
 .snippet {
   display: inline-block;
 	margin-bottom: 20px;
-  padding-left: 25px;
+  padding-left: 60px;
   padding-right: 25px;
-  width: 650px;
+  width: 600px;
 }
 
 .add_button {
@@ -78,7 +78,8 @@ body {
   height: auto !important;
   height: 100%;
   margin-left: -65%;
-  width: 310%;
+  width: 235%;
+  background: #E0E0EB;
 }
 
 .view {

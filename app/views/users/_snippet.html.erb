@@ -1,4 +1,5 @@
-<div class="snippet" id="<%= snippet.tags.first.title %>">
+
+<div class="snippet">
 	<h2 class="snippet-title buttons"><%= snippet.title %></h2>
   <% if snippet.author.id == session[:user_id] %>
     <div class="buttons"><a href="/snippets/<%= snippet.id %>/edit" data-no-turbolink><img src="http://png-5.findicons.com/files/icons/2711/free_icons_for_windows8_metro/512/edit_property.png" width="3%"></a></div>
@@ -9,7 +10,7 @@
 	  <div class="tag-list">
 	  	<ul class="tags">
 	  	<% snippet.tags.each do |tag| %>
-	  		<li class="tag"><%= tag.title %></li>
+	  		<li class="tag" id="<%= tag.title %>"><%= tag.title %></li>
 	  	<% end %>
 	  	</ul>
 	  </div>
