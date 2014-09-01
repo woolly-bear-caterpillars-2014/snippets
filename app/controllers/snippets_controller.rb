@@ -3,7 +3,7 @@ class SnippetsController < ApplicationController
 		if params[:search]
       @snippets = Snippet.search(params[:search]).order("created_at DESC")
     else
-      @snippets = Snippet.all
+      @snippets = Snippet.all.order("created_at DESC")
     end
 		@snippet = Snippet.new
 	end
