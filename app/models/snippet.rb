@@ -16,6 +16,10 @@ class Snippet < ActiveRecord::Base
 	  end
 	end
 
+	def self.default_order
+		order("created_at DESC")
+	end
+
 	def tag_list
 		return self.tags.map {|tag| tag.title}.join(", ") if self.tags
 	end
