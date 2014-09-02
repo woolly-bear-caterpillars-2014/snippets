@@ -1,17 +1,16 @@
 class CheatsheetsController < ApplicationController
 
+  before_action :load_user_from_param, only: [:index, :show, :create, :add_snippet, :remove_snippet]
+
   def index
-    @user = User.find(params[:user_id])
     @cheatsheets = Cheatsheet.all
   end
 
   def show
-    @user = User.find(params[:user_id])
     @cheatsheets = @user.cheatsheets.find(params[:id])
   end
 
   def create
-    @user = User.find(params[:user_id])
     @cheatsheet = Cheatsheet.create(cheatsheet_params)
     redirect_to user_cheatsheet_path
   end
@@ -32,17 +31,15 @@ class CheatsheetsController < ApplicationController
   end
 
   def add_snippet
-    user = User.find(params[:user_id])
     @snippet = Snippet.find(params[:id])
-    user.cheatsheets.first.snippets << @snippet
+    @user.cheatsheets.first.snippets << @snippet
     @snippet.increment!(:snip_count)
     redirect_to root_path
   end
 
   def remove_snippet
-    user = User.find(params[:user_id])
     @snippet = Snippet.find(params[:id])
-    user.cheatsheets.first.cheatsheet_snippets.find_by_snippet_id(@snippet.id).destroy
+    @user.cheatsheets.first.cheatsheet_snippets.find_by_snippet_id(@snippet.id).destroy
     @snippet.decrement!(:snip_count)
     redirect_to user_path(user.id)
   end
@@ -54,7 +51,15 @@ class CheatsheetsController < ApplicationController
   end
 
   private
-    def cheatsheet_params
-      params.require(:cheatsheet).permit(:name)
-    end
+
+  def cheatsheet_params
+    params.require(:cheatsheet).permit(:name)
+  end
+
+  def load_user_from_param
+    @user = User.find(params[:user_id])
+  end
+
+
+
 end
