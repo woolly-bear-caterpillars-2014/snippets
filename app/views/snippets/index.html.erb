@@ -1,4 +1,4 @@
-<% if session[:user_id] %>
+<% if  current_user %>
   <div class="create-snippet">
     <h3 class="click_create_snippet">create a snippet</h3>
     <%= render 'form' %>

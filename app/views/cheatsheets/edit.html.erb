@@ -1,4 +1,4 @@
-<% if session[:user_id] %>
+<% if current_user %>
 
   <%= link_to "Log Out", users_logout_path, method: :delete %>
   <%= link_to "Delete Cheatsheet", user_cheatsheet_path, method: :delete %>

@@ -1,4 +1,4 @@
-<% if session[:user_id] %>
+<% if current_user %>
   <%= link_to "Profile", user_path(session[:user_id]) %>
   <%= link_to "Log Out", users_logout_path, method: :delete %>
 <% else %>

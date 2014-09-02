@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if session[:user_id] == params[:id].to_i
+    if current_user && current_user.id == params[:id].to_i
       @user = User.find(params[:id])
     else
       redirect_to root_path
