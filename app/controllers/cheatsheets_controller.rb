@@ -39,9 +39,16 @@ class CheatsheetsController < ApplicationController
 
   def remove_snippet
     @snippet = Snippet.find(params[:id])
-    @user.cheatsheets.first.cheatsheet_snippets.find_by_snippet_id(@snippet.id).destroy
-    @snippet.decrement!(:snip_count)
-    redirect_to user_path(user.id)
+
+    cheatsheet_snippet = @user.cheatsheets.first.cheatsheet_snippets.find_by_snippet_id(@snippet.id)
+
+    # handle failures and give user feedback
+    if cheatsheet_snippet.destroy
+      @snippet.decrement!(:snip_count)
+      redirect_to user_path(@user.id), flash: {notice: "Removed snippet from cheatsheet"}
+    else
+      redirect_to user_path(@user.id), flash: {error: "Failed to remove snippet from cheatsheet"}
+    end
   end
 
   def destroy
