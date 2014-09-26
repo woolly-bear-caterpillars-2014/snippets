@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
 
   def show
-     @user = User.find(params[:id])
-     @cheatsheets = @user.cheatsheets.all
+    @search = Snippet.search(params[:q])
+    @user = User.find(params[:id])
+    @cheatsheets = @user.cheatsheets.all
   end
 
   def new
+    @search = Snippet.search(params[:q])
     @user = User.new
   end
 

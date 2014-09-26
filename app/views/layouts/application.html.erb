@@ -30,9 +30,9 @@
         <li><%= link_to 'sign up', new_user_path %></li>
       <% end %>
         <li>
-          <%= form_tag snippets_path, :method => 'get', :id => "snippet_search" do %>
-            <%= text_field_tag :search, params[:search], size: "50" %>
-            <%= submit_tag "Search", :name => nil %>
+          <%= search_form_for @search do |f| %>
+            <%= f.search_field :title_cont, :size => "50" %>
+            <%= f.submit "Search" %>
           <% end %>
         </li>
     </ul>

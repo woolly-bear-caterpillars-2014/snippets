@@ -1,10 +1,11 @@
 class SnippetsController < ApplicationController
 	def index
-		if params[:search]
-      @snippets = Snippet.search(params[:search]).order("created_at DESC")
-    else
-      @snippets = Snippet.all.order("created_at DESC")
-    end
+		@search = Snippet.search(params[:q])
+		if @search
+			@snippets = @search.result(distinct: true)
+	    else
+	    	@snippets = Snippet.all.order("created_at DESC")
+	    end
 		@snippet = Snippet.new
 	end
 
