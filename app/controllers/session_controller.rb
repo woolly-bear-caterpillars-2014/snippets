@@ -1,9 +1,11 @@
 class SessionController < ApplicationController
   def new
+    @search = Snippet.search(params[:q])
     @user = User.new
   end
 
   def create
+    @search = Snippet.search(params[:q])
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id

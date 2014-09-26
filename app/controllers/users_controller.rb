@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @search = Snippet.search(params[:q])
     @user = User.new
   end
 
