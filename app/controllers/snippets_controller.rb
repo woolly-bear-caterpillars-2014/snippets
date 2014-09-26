@@ -1,12 +1,25 @@
 class SnippetsController < ApplicationController
-	def index
-		@search = Snippet.search(params[:q])
-		if @search
-			@snippets = @search.result(distinct: true)
+	def index	
+		@search_by_title = Snippet.search(params[:q])
+		@search_by_tags = Tag.search(params[:q])
+
+		if @search_by_title || @search_by_tags
+			@snippets = []
+			
+			@results_by_title = @search_by_title.result(distinct: true)
+			@results_by_tags = @search_by_tags.result(distinct: true)
+			
+			@results_by_title.each{ |snippet| @snippets << snippet }
+			@results_by_tags.each do |tag|
+				tag.snippets.each do |snippet| @snippets << snippet
+				end
+			end
+			@snippets.uniq
 	    else
 	    	@snippets = Snippet.all.order("created_at DESC")
 	    end
-		@snippet = Snippet.new
+
+	    @snippet = Snippet.new
 	end
 
 	def show

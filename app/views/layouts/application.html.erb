@@ -30,7 +30,7 @@
         <li><%= link_to 'sign up', new_user_path %></li>
       <% end %>
         <li>
-          <%= search_form_for @search do |f| %>
+          <%= search_form_for @search_by_title do |f| %>
             <%= f.search_field :title_cont, :size => "50" %>
             <%= f.submit "Search" %>
           <% end %>
