@@ -36,6 +36,9 @@ gem 'travis-lint'
 
 gem 'simplecov'
 
+# Search Queries
+gem 'ransack'
+
 # Code Editor
 gem 'ace-rails-ap'
 gem 'rake'

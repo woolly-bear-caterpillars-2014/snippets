@@ -271,7 +271,7 @@ footer {
 
 .tag::after {
   background: #E0E0EB;
-  border-bottom: 15px solid transparent;
+  border-bottom: 13px solid transparent;
   border-left: 10px solid #144B73;
   border-top: 13px solid transparent;
   content: '';
