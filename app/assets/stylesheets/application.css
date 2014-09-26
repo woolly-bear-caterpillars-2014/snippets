@@ -118,7 +118,7 @@ h1 a {
 
 nav {
   position: fixed;
-  width: 99%;
+  width: 98%;
   height: 60px;
   padding: 15px;
   /*background: #38467A;*/
@@ -145,7 +145,24 @@ nav li {
   position: absolute;
   right: 0;
   padding-top: 25px;
-  width: 330px;
+  width: 340px;
+}
+
+.container{
+  text-align: left;
+}
+
+#sidebar-wrapper{
+  width: 165px;
+  background: #FAFAFA;
+}
+
+ul.sidebar-nav li.sidebar-brand a:hover{
+  color: #144B73;
+}
+
+.sidebar-nav li a:hover{
+  color: #144B73;
 }
 
 .star {
@@ -254,7 +271,7 @@ footer {
 
 .tag::after {
   background: #E0E0EB;
-  border-bottom: 13px solid transparent;
+  border-bottom: 15px solid transparent;
   border-left: 10px solid #144B73;
   border-top: 13px solid transparent;
   content: '';
@@ -263,13 +280,20 @@ footer {
   top: 0;
 }
 
+@media screen and (max-width: 1440px){
+  .cheatsheet{
+    margin-left: 15%;
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: 1250px){
 
-.snippet {
-  padding:0;
-  display:block;
-  margin:0 auto 20px;
-}
+  .snippet {
+    padding:0;
+    display:block;
+    margin:0 auto 20px;
+  }
 
 }
 
