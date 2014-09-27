@@ -85,12 +85,11 @@ body {
 
 .snippets_container {
   display: inline-block;
-  min-height: 555px;
   width: 700px;
   margin-left: 25px;
   padding-top: 25px;
   background: #fff;
-  overflow-y: scroll; 
+  overflow-y: scroll;
 }
 
 .description {
@@ -99,8 +98,7 @@ body {
   margin-left: 25px;
   margin-right: 25px;
   width: 555px;
-  min-height: 580px;
-  height: 57%;
+  height: 569px;
   background: #464646;
   color: #eeebd8;
   opacity: 0.70;
@@ -203,11 +201,12 @@ nav li a{
 }
 
 ul.sidebar{
-  position: relative;
+  position: fixed;
   float: right;
+  right: 0;
   height: 400px;
-  padding: 0;
   list-style-type: none;
+  z-index: 99;
 }
 
 ul.sidebar li.code-button{
@@ -362,12 +361,36 @@ footer {
 }
 
 @media screen and (max-width: 1250px){
-
   .snippet {
-    padding:0;
     display:block;
-    margin:0 auto 20px;
   }
-
 }
 
+@media screen and (max-width: 829px){
+  .snippets_container {
+    display: block;
+    height: 275px;
+  }
+  .description {
+    display: block;
+    margin-top: 10px;
+    height: 200px;
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 799px){
+  .snippets_container {
+    position: absolute;
+  }
+  .description {
+    position: relative;
+    margin-top: 310px;
+  }
+}
+
+@media screen and (max-width: 679px){
+  #snippet_search {
+    margin-top: 40px;
+  }
+}
