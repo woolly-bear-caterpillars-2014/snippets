@@ -1,13 +1,15 @@
-<% if session[:user_id] %>
-  <div class="create-snippet">
-    <h3 class="click_create_snippet">create a snippet</h3>
-    <%= render 'form' %>
-  </div>
-<% end %>
+<ul class="sidebar">
+  <a href="/"><li class="code-button active" data-no-turbolink></li></a>
+  <a href="/users/<%= session[:user_id] %>" data-no-turbolink><li class="sheet-button"></li></a>
+  <a href="/snippets/new" data-no-turbolink><li class="upload-button"></li></a>
+</ul>
 
-<% unless @snippets.empty? %>
-  <div class="snippets_container">
-    <%= render @snippets %>
-  </div>
-<% end %>
+<div class="snippets_container">
+	<% unless @snippets.empty? %>
+	    <%= render @snippets %>
+	<% end %>
+</div>
+
+<div class="description"></div>
+
 

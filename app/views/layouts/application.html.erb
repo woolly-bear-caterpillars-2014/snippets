@@ -22,8 +22,6 @@
     <ul>
       <% if session[:user_id] %>
         <li><%= link_to "profile", user_path(session[:user_id]) %></li>
-        <li><%= link_to "edit account", edit_user_path(session[:user_id]) %></li>
-        <li><%= link_to "delete account", user_path(session[:user_id]), method: :delete, data: { confirm: 'Are you sure?' } %></li>
         <li><%= link_to "log out", users_logout_path, method: :delete %></li>
       <% else %>
         <li><%= link_to 'log in', users_login_path %></li>
@@ -32,18 +30,17 @@
         <li>
           <%= search_form_for @search_by_title do |f| %>
             <%= f.search_field :title_cont, :size => "50" %>
-            <%= f.submit "Search" %>
+            <%= f.submit "Search", :class => "search-button" %>
           <% end %>
         </li>
     </ul>
-    <h1 data-no-turbolink><a href="/"><span class="star">★</span> codebytes</a></h1>
+    <a href="/"><div class="logo" data-no-turbolink></div></a>
   </nav>
   <div class="container">
     <% if flash[:notice] %>
       <p class="notice"><%= flash[:notice] %></p>
     <% end %>
     <%= yield %>
-    <div class="push"></div>
   </div>
 </body>
 </html>
