@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    redirect_to root_path
+  end
+
   def show
     @search_by_title = Snippet.search(params[:q])
     @user = User.find(params[:id])

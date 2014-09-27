@@ -44,7 +44,16 @@
 	margin-bottom: 20px;
   padding-left: 25px;
   padding-right: 25px;
+  padding-bottom: 25px;
   width: 600px;
+}
+
+div.snippet a.edit-delete-link {
+  position: relative;
+  float: right;
+  padding: 10px;
+  color: #e478b8;
+  text-decoration: none;
 }
 
 .add_button {
@@ -85,6 +94,7 @@ body {
 
 .snippets_container {
   display: inline-block;
+  height: 545px;
   width: 700px;
   margin-left: 25px;
   padding-top: 25px;
@@ -105,7 +115,7 @@ body {
 }
 
 .view {
-  margin: 100px auto;
+  margin: 2% auto;
   height: 475px;
   width: 500px;
   text-align: center;
@@ -140,6 +150,7 @@ div.logo{
   height: 100px;
   margin-left: 10px;
   background-image: url("codebytes_logo.png");
+  z-index: 99;
 }
 
 nav {
@@ -195,9 +206,15 @@ nav li a{
   text-align: left;
 }
 
-#sidebar-wrapper{
+#sidebar-wrapper {
+  top: 90px;
   width: 165px;
-  background: #FAFAFA;
+  background: #104a75;
+  z-index: 98;
+}
+
+ul.sidebar-nav li.sidebar-brand a {
+  color: #fff;
 }
 
 ul.sidebar{
@@ -234,8 +251,12 @@ ul.sidebar li.active {
   opacity: 1;
 }
 
-.star {
-  color: #fff;
+div.form-elements span.close-tags {
+  color: #8fff8f;
+}
+
+div.form-elements span.brand {
+  color: #e478b8;
 }
 
 .click_create_snippet {

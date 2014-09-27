@@ -1,4 +1,9 @@
 <div class="snippet">
+	<% if snippet.author.id == session[:user_id] %>
+		<%= link_to "add", add_snippet_path(:user_id => session[:user_id], :id => snippet.id), 'class' => "edit-delete-link",'data-no-turbolink' => true %>
+		<%= link_to "edit", edit_snippet_path(snippet.id), 'class' => "edit-delete-link", 'data-no-turbolink' => true %>
+		<%= link_to "delete", snippet_path(snippet.id), method: :delete, 'class' => "edit-delete-link", 'data-no-turbolink' => true, data: { confirm: "Are you sure you want to permanently delete your code snippet from codebytes?" } %>
+	<% end %>
 	<h2 class="title"><%= snippet.title %><span class="author">by <%= snippet.author.email %></h2>
 
 	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>

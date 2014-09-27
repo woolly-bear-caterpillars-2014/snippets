@@ -16,17 +16,6 @@
 //= require ace/ace
 
 $(function () {
-	
-	// sidebarNav = $('ul.sidebar a');
-	// sidebarNavButton = $('ul.sidebar li');
-
-	// sidebarNavButton.click(function(event){
-	// 	event.preventDefault();
-	// 	console.log(event.target);
-	// 	var activeButton = $(event.target)
-	// 	sidebarNav.children().removeClass("active");
-	// 	activeButton.toggleClass("active");
-	// });
 
 	if ($("#snippet-code").length > 0) {
 		var editor = ace.edit("snippet-code");
