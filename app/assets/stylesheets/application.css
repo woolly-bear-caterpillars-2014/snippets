@@ -42,7 +42,7 @@
 .snippet {
   display: inline-block;
 	margin-bottom: 20px;
-  padding-left: 60px;
+  padding-left: 25px;
   padding-right: 25px;
   width: 600px;
 }
@@ -54,36 +54,57 @@
   padding: 5px;
 }
 
-.buttons {
+h2.title {
   display: inline;
-  padding-left: 10px;
+  font-size: 30px;
+  color: #464646;
+}
+
+span.author {
+  display: block;
+  margin-left: 15px;
+  font-weight: lighter;
+  font-size: 22px;
+  color: #464646;
 }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #E0E0EB;
+  background: #eeebd8;
   color: #333;
   width: 100%;
 }
 
 .container {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
+  min-height: 525px;
   margin: 0 auto -4em;
-  padding-top: 90px;
+  padding-top: 125px;
   text-align: center;
   width: 100%;
 }
 
-/*.snippets_container {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-left: -65%;
-  width: 235%;
-  background: #E0E0EB;
-}*/
+.snippets_container {
+  display: inline-block;
+  min-height: 555px;
+  width: 700px;
+  margin-left: 25px;
+  padding-top: 25px;
+  background: #fff;
+  overflow-y: scroll; 
+}
+
+.description {
+  display: inline-block;
+  position: absolute;
+  margin-left: 25px;
+  margin-right: 25px;
+  width: 555px;
+  min-height: 580px;
+  height: 57%;
+  background: #464646;
+  color: #eeebd8;
+  opacity: 0.70;
+}
 
 .view {
   margin: 100px auto;
@@ -116,23 +137,29 @@ h1 a {
   left: 26px;
 }
 
+div.logo{
+  width: 300px;
+  height: 100px;
+  margin-left: 10px;
+  background-image: url("codebytes_logo.png");
+}
+
 nav {
   position: fixed;
-  width: 98%;
-  height: 60px;
-  padding: 15px;
-  /*background: #38467A;*/
-  background: #144B73;
+  width: 100%;
+  height: 85px;
+  background: #464646;
+  border-bottom: 5px solid #250f17;
   z-index: 99;
 }
 
 nav a {
   color: #F2F1EF;
-  padding: 5px;
   text-decoration: none;
 }
 
 nav ul {
+  padding: 10px;
   position: relative;
   float: right;
 }
@@ -141,11 +168,29 @@ nav li {
   display: inline;
 }
 
+nav li a{
+  margin-left: 10px;
+}
+
 #snippet_search {
   position: absolute;
   right: 0;
   padding-top: 25px;
-  width: 340px;
+  width: 365px;
+}
+
+.search-button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #594048;
+  border: 2px solid #271119;
+  border-radius: 25px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #8fff8f;
+  cursor: pointer;
 }
 
 .container{
@@ -157,12 +202,37 @@ nav li {
   background: #FAFAFA;
 }
 
-ul.sidebar-nav li.sidebar-brand a:hover{
-  color: #144B73;
+ul.sidebar{
+  position: relative;
+  float: right;
+  height: 400px;
+  padding: 0;
+  list-style-type: none;
 }
 
-.sidebar-nav li a:hover{
-  color: #144B73;
+ul.sidebar li.code-button{
+  width: 100px;
+  height: 100px;
+  background-image: url("codebytes.png");
+  opacity: 0.75;
+}
+
+ul.sidebar li.sheet-button{
+  width: 100px;
+  height: 100px;
+  background-image: url("cheatsheets.png");
+  opacity: 0.75;
+}
+
+ul.sidebar li.upload-button{
+  width: 100px;
+  height: 100px;
+  background-image: url("upload.png");
+  opacity: 0.75;
+}
+
+ul.sidebar li.active {
+  opacity: 1;
 }
 
 .star {
@@ -174,12 +244,12 @@ ul.sidebar-nav li.sidebar-brand a:hover{
   border: 1px solid #fff;
   color: #000;
   background-color: #fff;
+  visibility: hidden;
 }
 
 .create-snippet {
 	margin-bottom:20px;
   color: #fff;
-  background-color: #333;
 }
 
 .create-snippet h3 {
@@ -205,6 +275,11 @@ ul.sidebar-nav li.sidebar-brand a:hover{
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
+}
+
+.editor {
+  margin-top: 10px;
+  margin-left: 25px;
 }
 
 footer, .push {
@@ -234,7 +309,7 @@ footer {
 
 .tags {
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 25px;
   overflow: hidden;
   padding: 0;
 }
@@ -252,13 +327,12 @@ footer {
   line-height: 26px;
   padding: 0 20px 0 23px;
   position: relative;
-  margin: 0 10px 10px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
 }
 
 .tag::before {
-  background: #E0E0EB;
+  background: #fff;
   border-radius: 10px;
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
   content: '';
@@ -270,7 +344,7 @@ footer {
 }
 
 .tag::after {
-  background: #E0E0EB;
+  background: #fff;
   border-bottom: 13px solid transparent;
   border-left: 10px solid #144B73;
   border-top: 13px solid transparent;

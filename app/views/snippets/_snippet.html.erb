@@ -1,15 +1,6 @@
 <div class="snippet">
-	<h2 class="snippet-title buttons"><%= snippet.title %></h2>
+	<h2 class="title"><%= snippet.title %><span class="author">by <%= snippet.author.email %></h2>
 
-  <% if session[:user_id] %>
-    <a href="users/<%= session[:user_id] %>/cheatsheets/newsnippet/<%= snippet.id %>" data-no-turbolink><img class="buttons" src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/add_list.png" width="3%"></a>
-  <% else %>
-    <a href="/users/login" data-no-turbolink><img class="buttons" src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/add_list.png" width="3%"></a>
-  <% end %>
-  <% if snippet.author.id == session[:user_id] %>
-    <div class="buttons"><a href="/snippets/<%= snippet.id %>/edit" data-no-turbolink><img src="http://png-5.findicons.com/files/icons/2711/free_icons_for_windows8_metro/512/edit_property.png" width="3%"></a></div>
-  <div class="buttons"><%= link_to image_tag("https://cdn1.iconfinder.com/data/icons/icons-unleashed-vol1/256/-trash.png", width: '3%'), snippet, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-  <% end %>
 	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
 	<% if snippet.tags %>
 	  <div class="tag-list">
