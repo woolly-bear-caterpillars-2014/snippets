@@ -1,1 +1,13 @@
-<%= render 'form' %>
+<ul class="sidebar">
+  <a href="/"><li class="code-button" data-no-turbolink></li></a>
+  <a href="/users/<%= session[:user_id] %>" data-no-turbolink><li class="sheet-button"></li></a>
+  <a href="/snippets/new" data-no-turbolink><li class="upload-button"></li></a>
+</ul>
+
+<% if session[:user_id] %>
+	<div class="caption">Edit your code...</div>
+	<%= render 'form'%>
+	<div class="new-snippet-description"><p>Description</p></div>
+<% else %>
+	<%= render 'users/form' %>
+<% end %>

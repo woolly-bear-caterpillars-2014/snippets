@@ -29,8 +29,12 @@ class SnippetsController < ApplicationController
 	end
 
 	def new
-		@search_by_title = Snippet.search(params[:q])
-		@snippet = Snippet.new
+		if session[:user_id]
+			@search_by_title = Snippet.search(params[:q])
+			@snippet = Snippet.new
+		else
+			redirect_to users_login_path
+		end
 	end
 
 	def create

@@ -30,12 +30,24 @@
 	position: relative;
   background-color: #333;
 }
+
 .editor {
 	width:600px;
 	height:150px;
 	position:relative;
+  margin-top: 10px;
+  margin-left: 25px;
 	border: 1px solid #DDD;
 	border-radius: 4px;
+  text-align: left;
+}
+
+.editor-new {
+  width:600px;
+  height:150px;
+  position:relative;
+  border: 1px solid #DDD;
+  border-radius: 4px;
   text-align: left;
 }
 
@@ -63,7 +75,7 @@ div.snippet a.edit-delete-link {
   padding: 5px;
 }
 
-h2.title {
+h2.snippet-title {
   display: inline;
   font-size: 30px;
   color: #464646;
@@ -102,16 +114,58 @@ body {
   overflow-y: scroll;
 }
 
-.description {
+.new-snippet-description {
   display: inline-block;
   position: absolute;
+  top: 0;
+  margin-top: 125px;
   margin-left: 25px;
   margin-right: 25px;
+  text-align: center;
   width: 555px;
   height: 569px;
   background: #464646;
   color: #eeebd8;
   opacity: 0.70;
+}
+
+.new-snippet-description p {
+  margin-top: 45%;
+}
+
+.snippet-description {
+  display: inline-block;
+  position: absolute;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+  width: 555px;
+  height: 569px;
+  background: #464646;
+  color: #eeebd8;
+  opacity: 0.70;
+}
+
+.snippet-description p {
+  margin-top: 45%;
+}
+
+.cheatsheet-description {
+  display: inline-block;
+  position: absolute;
+  margin-top:40px;
+  margin-left: 50px;
+  margin-right: 25px;
+  text-align: center;
+  width: 475px;
+  height: 480px;
+  background: #464646;
+  color: #eeebd8;
+  opacity: 0.70;
+}
+
+.cheatsheet-description p {
+  margin-top: 45%;
 }
 
 .view {
@@ -210,11 +264,55 @@ nav li a{
   top: 90px;
   width: 165px;
   background: #104a75;
+  overflow-y: scroll; 
   z-index: 98;
+}
+
+.cheatsheet{
+  display: inline-block;
+  margin-top: -50px;
+  margin-left: 170px;
+  width: 50%;
+}
+
+ul.sidebar-nav {
+  width: 165px;
+  font-size: 11px;
 }
 
 ul.sidebar-nav li.sidebar-brand a {
   color: #fff;
+}
+
+ul.sidebar-flat{
+  position: relative;
+  float: right;
+  margin-top: -70px;
+  margin-right: 110px;
+}
+
+ul.sidebar-flat li.code-button{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url("codebytes.png");
+  opacity: 0.75;
+}
+
+ul.sidebar-flat li.sheet-button{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url("cheatsheets.png");
+  opacity: 0.75;
+}
+
+ul.sidebar-flat li.upload-button{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url("upload.png");
+  opacity: 0.75;
 }
 
 ul.sidebar{
@@ -251,12 +349,24 @@ ul.sidebar li.active {
   opacity: 1;
 }
 
+ul.sidebar-flat li.active {
+  opacity: 1;
+}
+
 div.form-elements span.close-tags {
   color: #8fff8f;
 }
 
 div.form-elements span.brand {
   color: #e478b8;
+}
+
+div.caption{
+  margin-top: 75px;
+  margin-left: 75px;
+  font-family: captionFont;
+  font-size: 65px;
+  color: #254a66;
 }
 
 .click_create_snippet {
@@ -286,20 +396,31 @@ div.form-elements span.brand {
   padding:10px 0;
 }
 .create-snippet input, .edit_snippet input {
-  padding:2px 4px;
+  /*padding:2px 4px;*/
 }
 .new_snippet label, .edit_snippet label {
   margin-bottom:5px;
 }
 .new_snippet, .edit_snippet {
-  max-width: 600px;
-  margin: 0 auto;
+  display: inline-block;
+  /*max-width: 600px;*/
+  margin: 10px 10px 0 75px;
   text-align: left;
+  color: #fff;
+  background: #272822;
 }
 
-.editor {
-  margin-top: 10px;
-  margin-left: 25px;
+.editor-title {
+  font-size: 24px;
+  margin-top: -10px;
+  margin-left: 6px;
+}
+
+.editor-submit {
+  position: relative;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 footer, .push {
@@ -345,7 +466,7 @@ footer {
   display: inline-block;
   height: 26px;
   line-height: 26px;
-  padding: 0 20px 0 23px;
+  padding: 0 23px 0 23px;
   position: relative;
   text-decoration: none;
   -webkit-transition: color 0.2s;
@@ -374,9 +495,19 @@ footer {
   top: 0;
 }
 
+@font-face {
+  font-family: captionFont;
+  src: url(./fonts/SnellRoundhand-Bold.eot),
+       url(./fonts/SnellRoundhand-Bold.woff),
+       url(./fonts/SnellRoundhand-Bold.ttf),
+       url(./fonts/SnellRoundhand-Bold.svg)
+}
+
 @media screen and (max-width: 1440px){
   .cheatsheet{
-    margin-left: 15%;
+    display: inline-block;
+    margin-top: -50px;
+    margin-left: 170px;
     width: 50%;
   }
 }

@@ -1,18 +1,17 @@
-
 <div class="snippet">
-	<h2 class="snippet-title buttons"><%= snippet.title %></h2>
-  <% if snippet.author.id == session[:user_id] %>
-    <div class="buttons"><a href="/snippets/<%= snippet.id %>/edit" data-no-turbolink><img src="http://png-5.findicons.com/files/icons/2711/free_icons_for_windows8_metro/512/edit_property.png" width="3%"></a></div>
-  <% end %>
-  <div class="buttons"><a href="/users/<%= session[:user_id] %>/cheatsheets/removesnippet/<%= snippet.id %>" data-no-turbolink><img src="https://cdn1.iconfinder.com/data/icons/icons-unleashed-vol1/256/-trash.png" width="3%"></a></div>
-	<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
 	<% if snippet.tags %>
-	  <div class="tag-list">
-	  	<ul class="tags">
-	  	<% snippet.tags.each do |tag| %>
-	  		<li class="tag" id="<%= tag.title %>"><%= tag.title %></li>
-	  	<% end %>
-	  	</ul>
-	  </div>
-  <% end %>
+			<%= link_to "remove", remove_snippet_path(user_id: session[:user_id], id: snippet.id), 'class' => "edit-delete-link", data: { confirm: "Are you sure you want to remove this snippet from your cheatsheet?" }, 'data-no-turbolink' => true %>
+			<% if snippet.author.id == session[:user_id] %>
+				<%= link_to "edit", edit_snippet_path(snippet.id), 'class' => "edit-delete-link", 'data-no-turbolink' => true %>
+			<% end %>
+			<h2 class="snippet-title" ><%= snippet.title %><span class="author">by <%= snippet.author.email %></h2>
+		<div class="tag-list">
+			<ul class="tags">
+			<% snippet.tags.each do |tag| %>
+				<li class="tag" id="<%= tag.title %>"><%= tag.title %></li>
+			<% end %>
+			</ul>
+		</div>
+		<div id="snippet-readonly" class="editor readonly" alt="<%=snippet.language%>" data-no-turbolink><%= snippet.code %></div>
+	<% end %>
 </div>

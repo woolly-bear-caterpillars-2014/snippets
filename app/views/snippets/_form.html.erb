@@ -1,15 +1,15 @@
 <%= form_for @snippet do |f|%>
 	<div class="field">
-		<%=f.text_field :title, placeholder: "Title", size: "115" %>
+		<%=f.text_field :title, placeholder: "Title", 'class' => "editor-title", size: "50" %>
 	</div>
 
 	<div class="field snippet-editor">
-		<div id="snippet-code" class="editor"></div>
+		<div id="snippet-code" class="editor-new"></div>
 		<%=f.text_area :code %>
 	</div>
 	<div class="field">
 		<%= label_tag :language, "Language" %><br />
-		<%=f.select :language, ['ruby', 'javascript', 'html', 'css'], {}, class: 'editor-mode' %>
+		<%=f.select :language, ['ruby', 'javascript', 'html', 'css'], {}, class: 'editor-mode' %><br />
 	</div>
 	<div class="field">
 		<%= label_tag :tag_list, "Tags (separated by commas)" %><br />
@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="actions">
-		<%=f.submit %>
+		<%=f.submit "Create Snippet", 'class' => "editor-submit" %>
 	</div>
 <%end%>
 

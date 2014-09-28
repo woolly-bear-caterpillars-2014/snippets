@@ -1,7 +1,13 @@
 <ul class="sidebar">
-  <a href="/"><li class="code-button active" data-no-turbolink></li></a>
-  <a href="/users/<%= session[:user_id] %>" data-no-turbolink><li class="sheet-button"></li></a>
-  <a href="/snippets/new" data-no-turbolink><li class="upload-button"></li></a>
+	<% if session[:user_id] %>
+		<a href="/"><li class="code-button active" data-no-turbolink></li></a>
+		<a href="/users/<%= session[:user_id] %>" data-no-turbolink><li class="sheet-button"></li></a>
+		<a href="/snippets/new" data-no-turbolink><li class="upload-button"></li></a>
+	<% else %>
+		<a href="/users/new"><li class="code-button active" data-no-turbolink></li></a>
+		<a href="/users/new" data-no-turbolink><li class="sheet-button"></li></a>
+		<a href="/users/new" data-no-turbolink><li class="upload-button"></li></a>
+	<% end %>
 </ul>
 
 <div class="snippets_container">
@@ -10,6 +16,6 @@
 	<% end %>
 </div>
 
-<div class="description"></div>
+<div class="snippet-description"><p>Description</p></div>
 
 
