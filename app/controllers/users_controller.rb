@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
 
+  def index
+    redirect_to root_path
+  end
+
   def show
-    @search = Snippet.search(params[:q])
+    @search_by_title = Snippet.search(params[:q])
     @user = User.find(params[:id])
     @cheatsheets = @user.cheatsheets.all
   end
 
   def new
-    @search = Snippet.search(params[:q])
+    @search_by_title = Snippet.search(params[:q])
     @user = User.new
   end
 
@@ -23,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @search_by_title = Snippet.search(params[:q])
     if session[:user_id] == params[:id].to_i
       @user = User.find(params[:id])
     else
@@ -31,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @search_by_title = Snippet.search(params[:q])
     @user = User.find(params[:id])
 
     if @user.update(user_params)

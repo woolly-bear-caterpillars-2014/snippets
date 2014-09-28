@@ -15,8 +15,8 @@
 //= require_tree .
 //= require ace/ace
 
-
 $(function () {
+
 	if ($("#snippet-code").length > 0) {
 		var editor = ace.edit("snippet-code");
 		console.log(editor);
