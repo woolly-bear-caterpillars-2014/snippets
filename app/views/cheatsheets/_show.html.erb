@@ -1,8 +1,18 @@
+<ul class="sidebar-flat">
+  <a href="/"><li class="code-button" data-no-turbolink></li></a>
+  <a href="/users/<%= session[:user_id] %>" data-no-turbolink><li class="sheet-button active"></li></a>
+  <a href="/snippets/new" data-no-turbolink><li class="upload-button"></li></a>
+</ul>
+
 <% @cheatsheets.each do |cheatsheet| %>
   <div class="cheatsheet">
+  	<div class="snippets_container">
     <!-- <h2><%= cheatsheet.name %></h2> -->
     <% if cheatsheet.snippets %>
       <%= render partial: "snippet", collection: cheatsheet.snippets %>
     <% end %>
+	</div>
   </div>
 <% end  %>
+
+<div class="cheatsheet-description"><p>Description</p></div>

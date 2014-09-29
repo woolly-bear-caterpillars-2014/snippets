@@ -1,20 +1,40 @@
 class SnippetsController < ApplicationController
-	def index
-		@search = Snippet.search(params[:q])
-		if @search
-			@snippets = @search.result(distinct: true)
+	def index	
+		@search_by_title = Snippet.search(params[:q])
+		@search_by_tags = Tag.search(params[:q])
+
+		if @search_by_title || @search_by_tags
+			@snippets = []
+			
+			@results_by_title = @search_by_title.result(distinct: true)
+			@results_by_tags = @search_by_tags.result(distinct: true)
+			
+			@results_by_title.each{ |snippet| @snippets << snippet }
+			@results_by_tags.each do |tag|
+				tag.snippets.each do |snippet| @snippets << snippet
+				end
+			end
+			@snippets.uniq!
 	    else
 	    	@snippets = Snippet.all.order("created_at DESC")
 	    end
-		@snippet = Snippet.new
+
+	    @snippet = Snippet.new
 	end
 
 	def show
-		@snippet = Snippet.find(params[:id])
+		@search_by_title = Snippet.search(params[:q])
+		@user = User.find(session[:user_id])
+		redirect_to user_path(@user)
 	end
 
 	def new
-		@snippet = Snippet.new
+		if session[:user_id]
+			@search_by_title = Snippet.search(params[:q])
+			@snippet = Snippet.new
+		else
+			redirect_to users_login_path
+		end
 	end
 
 	def create
@@ -22,10 +42,9 @@ class SnippetsController < ApplicationController
 		@snippet = @user.snippets.create(snippet_params)
 		if @snippet.save
 			tag_list = Tag.create_tags(params[:tag_list])
-			p tag_list
-		  tag_list.each do |tag_id|
-		    @snippet.snippet_tags.create(tag_id: tag_id)
-		  end
+		  	tag_list.each do |tag_id|
+		    	@snippet.snippet_tags.create(tag_id: tag_id)
+		  	end
 			redirect_to snippets_path
 		else
 			redirect_to snippets_path
@@ -33,6 +52,7 @@ class SnippetsController < ApplicationController
 	end
 
 	def edit
+		@search_by_title = Snippet.search(params[:q])
 		@snippet = Snippet.find(params[:id])
 	end
 

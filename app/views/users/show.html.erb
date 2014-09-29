@@ -4,22 +4,12 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="#<%= @tags.first %>">
                         &#9651; TOP
                     </a>
                 </li>
-                <!-- THE LOGIC BELOW SHOULD PROBABLY BE MOVED INTO THE CONTROLLER -->
-                <% unique_tags = [] %>
-                <% @user.cheatsheets.first.snippets.each do |snippet| %>
-                    <% snippet.tags.each do |tag| %>
-                      <% unique_tags << tag.title %>
-                    <% end %>
-                <% end %>
 
-                <% unique_tags = unique_tags.uniq %>
-                <!-- LOGIC-TO-BE-MOVED TO CONTROLLER ENDS HERE -->
-
-                <% unique_tags.each do |tag| %>
+                <% @tags.each do |tag| %>
                   <li>
                       <a href="#<%= tag %>"><%= tag.upcase %></a>
                   </li>
@@ -41,7 +31,7 @@
 
 <% else %>
 
-  <%= render 'form' %>
+    <%= render 'users/new' %>
 
 <% end %>
 
